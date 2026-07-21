@@ -1,0 +1,71 @@
+name: Temporary GENESIS data fetch
+on:
+  push:
+    branches: [tmp-genesis-61211-fetch]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: tmp-genesis-61211-fetch
+      - name: Fetch table 61211-0003
+        shell: bash
+        run: |
+          mkdir -p tmp_genesis
+          cat > /tmp/fetch.py <<'PY'
+          import json, os, zipfile, io
+          import requests
+          endpoints = [
+              'https://genesis.destatis.de/genesisWS/rest/2020/data/tablefile',
+              'https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile'
+          ]
+          creds = [
+              ('c6657d00306f4edf91f2cefe54ae5640','GAST'),
+              ('GAST','GAST')
+          ]
+          form = {
+              'name':'61211-0003','area':'all','compress':'false','transpose':'false',
+              'startyear':'2006','endyear':'2026','format':'ffcsv','job':'false',
+              'language':'de','quality':'off','stand':'01.01.1970 01:00'
+          }
+          log=[]
+          for endpoint in endpoints:
+              for username,password in creds:
+                  try:
+                      r=requests.post(endpoint,headers={
+                          'accept':'application/octet-stream','username':username,
+                          'password':password,'Content-Type':'application/x-www-form-urlencoded'
+                      },data=form,timeout=180,allow_redirects=True)
+                      log.append({'endpoint':endpoint,'user':username[:4]+'…','status':r.status_code,'type':r.headers.get('content-type'),'length':len(r.content),'head':r.text[:300] if 'text' in r.headers.get('content-type','') or 'json' in r.headers.get('content-type','') else ''})
+                      if r.status_code==200 and len(r.content)>1000:
+                          open('tmp_genesis/response.bin','wb').write(r.content)
+                          open('tmp_genesis/response_headers.json','w').write(json.dumps(dict(r.headers),indent=2))
+                          data=r.content
+                          if data[:2]==b'PK':
+                              with zipfile.ZipFile(io.BytesIO(data)) as z:
+                                  z.extractall('tmp_genesis/extracted')
+                          else:
+                              try:
+                                  obj=r.json()
+                                  open('tmp_genesis/response.json','w').write(json.dumps(obj,ensure_ascii=False,indent=2))
+                              except Exception:
+                                  open('tmp_genesis/response.csv','wb').write(data)
+                          open('tmp_genesis/fetch_log.json','w').write(json.dumps(log,ensure_ascii=False,indent=2))
+                          raise SystemExit(0)
+                  except Exception as e:
+                      log.append({'endpoint':endpoint,'user':username[:4]+'…','error':repr(e)})
+          open('tmp_genesis/fetch_log.json','w').write(json.dumps(log,ensure_ascii=False,indent=2))
+          raise SystemExit(1)
+          PY
+          python /tmp/fetch.py
+      - name: Commit fetched data
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tmp_genesis
+          git commit -m "Temporary: fetch GENESIS 61211-0003" || exit 0
+          git push origin HEAD:tmp-genesis-61211-fetch
