@@ -1,0 +1,703 @@
+assets/TableService-Fr8UZoVm.js
+assets/TablePreselectionInfo-Dc6OuYvQ.js
+assets/TablePreselectionInfo-CG3vQKpN.css
+assets/StatisticDetailsPage-ClYwaK2J.js
+assets/StatisticDetailsPage-xhvRJbnB.css
+assets/StatisticsPage-BIbIAU93.js
+assets/StatisticsPage-CmJXYS0b.css
+assets/StatisticTablePage-Cy7O1ovX.js
+assets/ServicesApi-c7hB3tCd.js
+assets/StatisticTablePage-VgojC_OW.css
+&&(u[y]=r[y])}else u=r;return r=u.ref,{$$typeof:d,type:s,key:f,ref:r!==void 0?r:null,props:u}}return cg.Fragment=e,cg.jsx=a,cg.jsxs=a,cg}var c0;function jx(){return c0||(c0=1,bb.exports=Nx()),bb.exports}var c=jx();const vb=window.trustedTypes?.createPolicy(
+?T.integrity:void 0})}else s.d.m(v)},Vr.requestFormReset=function(v){s.d.r(v)},Vr.unstable_batchedUpdates=function(v,T){return v(T)},Vr.useFormState=function(v,T,j){return f.H.useFormState(v,T,j)},Vr.useFormStatus=function(){return f.H.useHostTransitionStatus()},Vr.version=
+,Vr}var m0;function Iv(){if(m0)return Sb.exports;m0=1;function d(){if(!(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__>
+))try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(d)}catch(e){console.error(e)}}return d(),Sb.exports=Bx(),Sb.exports}var p0;function Vx(){if(p0)return dg;p0=1;var d=Px(),e=Bp(),a=Iv();function s(t){var n=
+unstable_legacy-backwards
+,t),Ni(g),l.head.appendChild(g)}}}function So(t,n,l){On.S(t,n,l);var g=Ks;if(g&&t){var k=fs(g).hoistableStyles,I=_h(t);n=n||
+,instance:G,count:1,state:oe},k.set(I,G)}}}function kd(t,n){On.X(t,n);var l=Ks;if(l&&t){var g=fs(l).hoistableScripts,k=Fh(t),I=g.get(k);I||(I=l.querySelector(ng(k)),I||(t=O({src:t,async:!0},n),(n=Li.get(k))&&cb(t,n),I=l.createElement(
+,instance:I,count:1,state:null},g.set(k,I))}}function Um(t,n){On.M(t,n);var l=Ks;if(l&&t){var g=fs(l).hoistableScripts,k=Fh(t),I=g.get(k);I||(I=l.querySelector(ng(k)),I||(t=O({src:t,async:!0,type:
+?(n=_h(l.href),l=fs(k).hoistableStyles,g=l.get(n),g||(g={type:
+){t=_h(l.href);var I=fs(k).hoistableStyles,G=I.get(t);if(G||(k=k.ownerDocument||k,G={type:
+?(n=Fh(l),l=fs(k).hoistableScripts,g=l.get(n),g||(g={type:
+ does not have an element or Component. This means it will render an <Outlet /> with a null value by default resulting in an 
+You cannot use the `useSearchParams` hook in a browser that does not support the URLSearchParams API. If you need to support Internet Explorer 11, we recommend you load a polyfill such as https://github.com/ungap/url-search-params.
+?e(d):new Mu(e).convertToDestination(d)}function tS(d,e){return d==null?[]:Object.keys(d).sort((s,r)=>s.localeCompare(r)).filter(s=>{const r=d[s],u=e[s];return Array.isArray(r)&&Array.isArray(u)?r.length!==u.length?!0:r.length===0?!1:r.some(f=>!u.includes(f)):d[s]!==e[s]})}const Dy={min:12,max:50};function Iu(d,e){const a=Zh.getValidResult(),s={...Dy,...e};let r=0;return(d||
+downloadSVG. The SVG element hasn't been found
+",setLastSearch:()=>null,searchResults:null,setSearchResults:()=>null,suggestions:null,setSuggestions:()=>null,lastSearchMode:null,setLastSearchMode:()=>null,clear:()=>null}),mS=C.memo(function(e){const[a,s]=C.useState(null),[r,u]=C.useState(null),[f,y]=C.useState(null),[v,T]=C.useState(null),j=()=>{s(null),u(
+aria-multiselectable
+GetCurrentStatisticTableEvent
+},Statistics:{en:
+},Api:{AriaLabel:{en:
+}},WebServiceApi:{WebServiceApiTitle:{en:
+},NotAnAcceptableEmail:{en:
+},SavedStatisticsUpdates:{en:
+},Table:{AriaLabel:{en:
+},Item:{Statistic:{AriaLabel:{de:
+}},Table:{AriaLabel:{de:
+},Statistic:{en:
+},Table:{en:
+},ShowStatisticCode:{AriaLabel:{en:
+}},Table:{AriaLabel:{en:
+}},StatisticsCode:{de:
+}}}},PopularStatistic:{Title:{en:
+}}},PopularStatisticModal:{CardTitle:{en:
+},Statistics:{Statistics:{en:
+},NewStatistics:{en:
+},UpdatedStatistics:{en:
+},NewTables:{en:
+},Download:{en:
+},DownloadTooltip:{en:
+},ToTable:{en:
+},Tabs:{Tables:{en:
+}},Tables:{Toolbar:{Code:{en:
+},TableName:{en:
+},NoTablesExist:{en:
+},ResultsFound:{en:
+},NoResults:{en:
+}},StatisticsPage:{GroupName:{de:
+},ResultOnlyTables:{en:
+},ResultOnlyStatistics:{en:
+},ResultsSuggestion:{en:
+},Tooltip:{ArrowTooltip:{OpenTableList:{de:
+},CloseTableList:{de:
+}},ToStatistic:{de:
+}},NoFilterResults:{de:
+}},StatisticDetailsPage:{PageTitle:{NotLoaded:{en:
+},LinkToTable:{en:
+},ResultFoundInStatistic:{en:'Your search resulted in {tablesCount} {tableText} from {statisticsCount} {statisticText}. Here you see 1 {statisticTableText} from 
+.',de:'Ihre Suche ergab {tablesCount} {tableText} aus {statisticsCount} {statisticText}. Hier sehen Sie die passende 1 {statisticTableText} aus 
+.'},ResultsFoundInStatistic:{en:'Your search resulted in {tablesCount} {tableText} from {statisticsCount} {statisticText}. Here you see {statisticTablesCount} {statisticTableText} from 
+.',de:'Ihre Suche ergab {tablesCount} {tableText} aus {statisticsCount} {statisticText}. Hier sehen Sie die passenden {statisticTablesCount} {statisticTableText} aus 
+.'},NoResults:{en:
+},NoFilterResults:{de:
+}},StatisticTablePage:{PageTitle:{NotLoaded:{en:
+Table
+GENESIS-Online - Table '{name}'
+Statistics
+Information on the table
+Your search resulted in {tablesCount} {tableText} from {statisticsCount} {statisticText}.
+Ihre Suche ergab {tablesCount} {tableText} aus {statisticsCount} {statisticText}.
+Your search resulted in {tablesCount} {tableText}.
+Ihre Suche ergab {tablesCount} {tableText}.
+Here you see your choosen table.
+Download
+You need to reduce your table before adding it to the dashboard
+Statistic
+Der Prozess wurde gestartet. Sie erhalten einen Download-Link innerhalb der n√§chsten 2 Stunden per E-Mail.
+The process has been started. You will receive a link to download the data by email within the next 2 hours.
+Schlie√üt das Modal zum Download von Tabellen
+Closes the table download modal
+The table was downloaded transposed so that it could be displayed in Excel.
+Click on the file format you want to download.
+Due to an unknown error, no a download is currently not available for this table. If you receive this error multiple times, please [https://www.destatis.de/DE/Service/Kontakt/Genesis/Servicekontakt-GENESIS.html contact] us specifying the selected table number.
+Aufgrund eines Fehlers ist ein Download aktuell nicht m√∂glich. Sollte diese Meldung wiederholt auftreten, melden Sie sich bitte √ºber das [https://www.destatis.de/DE/Service/Kontakt/Genesis/Servicekontakt-GENESIS.html Kontaktformular] unter Angabe der ausgew√§hlten Tabellennummer.
+XLSX
+XLSX Format
+XLSX format
+CSV
+CSV Format
+CSV format
+CSV (Flat)
+CSV (Flat) Format
+CSV (Flat) format
+Beim Download ist ein allgemeiner Fehler aufgetreten. Bitte versuchen Sie es sp√§ter erneut.
+A general error occurred during the download. Please try again later.
+Unable to get API
+API kann nicht abgerufen werden
+No table is loaded
+This table contains only a small preselection. If you cannot find the desired data, please adjust the table manually.
+Closes the statistics variables modal
+statistics
+statistic
+tables
+table
+StatisticDetails
+The contents of the table were automatically adjusted based on the search terms.
+Not all search terms can be selected in the table at the same time.
+Click here to pen the modal to choose where you would like to share the following most searched-for statistics: 
+Contents Navigation to: homepage, statistics, dashboard and about genesis-online
+Webservice-Schnittstelle (API)
+Webservice interface (API)
+),s+=e);return s}var bg={exports:{}};bg.exports;var F0;function t3(){return F0||(F0=1,(function(d,e){var a=200,s=
+)(),Tt=e&&!e.nodeType&&e,jt=Tt&&!0&&d&&!d.nodeType&&d,pt=jt&&jt.exports===Tt,_t=pt&&Ke.process,na=(function(){try{return _t&&_t.binding&&_t.binding(
+/api/rest/dashboards/create
+/api/rest/dashboards/{dashboardCode}/components/create
+/api/rest/dashboards/{dashboardCode}
+/api/rest/dashboards/{dashboardCode}/components/{componentCode}
+/api/rest/dashboards/{dashboardCode}/components
+/api/rest/dashboards
+/api/rest/help/faq
+/api/rest/information/comingSoon
+/api/rest/information/importantChanges
+/api/rest/information/latestData
+/api/rest/information/maintenance
+/api/rest/information/newsfeed/{newsfeedFormat}/{language}
+/api/rest/information/topStatistics
+/api/rest/information/video
+/api/rest/measureUnit/{measureUnitName}/information
+/api/rest/search/autofill
+/api/rest/search/wordlist/{language}
+/api/rest/search
+/api/rest/search/suggestion
+/api/rest/sessions
+/api/rest/settings/instance
+statisticCode
+Required parameter "statisticCode" was null or undefined when calling getStatisticInformation().
+/api/rest/statistics/{statisticCode}/information
+{statisticCode}
+Required parameter "statisticCode" was null or undefined when calling getStatisticQuickInformation().
+/api/rest/statistics/{statisticCode}/quickinformation
+/api/rest/statistics
+Required parameter "statisticCode" was null or undefined when calling getTablesForStatistic().
+/api/rest/statistics/{statisticCode}/tables
+tableCode
+Required parameter "tableCode" was null or undefined when calling batchDownload().
+downloadFormat
+Required parameter "downloadFormat" was null or undefined when calling batchDownload().
+Required parameter "language" was null or undefined when calling batchDownload().
+Required parameter "uuid" was null or undefined when calling batchDownload().
+/api/rest/tables/{tableCode}/batchDownload/{downloadFormat}/{language}
+{tableCode}
+{downloadFormat}
+Required parameter "tableCode" was null or undefined when calling download().
+Required parameter "downloadFormat" was null or undefined when calling download().
+Required parameter "language" was null or undefined when calling download().
+/api/rest/tables/{tableCode}/download/{downloadFormat}/{language}
+Required parameter "tableCode" was null or undefined when calling getGenmlForMapService().
+/api/rest/tables/{tableCode}/map/genml
+Required parameter "tableCode" was null or undefined when calling getGenmlForTable().
+subTableKey
+Required parameter "subTableKey" was null or undefined when calling getGenmlForTable().
+/api/rest/tables/{tableCode}/genml/{subTableKey}
+{subTableKey}
+Required parameter "tableCode" was null or undefined when calling getGomForTable().
+Required parameter "subTableKey" was null or undefined when calling getGomForTable().
+/api/rest/tables/{tableCode}/gom/{subTableKey}
+Required parameter "tableCode" was null or undefined when calling getTableData().
+/api/rest/tables/{tableCode}/data
+Required parameter "tableCode" was null or undefined when calling getTableData1().
+Required parameter "initialStateJST" was null or undefined when calling getTableData1().
+Required parameter "tableCode" was null or undefined when calling getTableDataByURL().
+Required parameter "subTableKey" was null or undefined when calling getTableDataByURL().
+/api/rest/tables/{tableCode}/data/{subTableKey}
+Required parameter "tableCode" was null or undefined when calling getTableInformation().
+/api/rest/tables/{tableCode}/information
+Required parameter "tableCode" was null or undefined when calling getTableQualitySigns().
+/api/rest/tables/{tableCode}/qualitySigns
+Required parameter "tableCode" was null or undefined when calling getTableQuickInformation().
+/api/rest/tables/{tableCode}/quickinformation
+Required parameter "tableCode" was null or undefined when calling getTableStructure().
+/api/rest/tables/{tableCode}/structure
+Required parameter "tableCode" was null or undefined when calling getTableStructure1().
+Required parameter "initialStateJST" was null or undefined when calling getTableStructure1().
+/api/rest/tables/structure
+Required parameter "tableCode" was null or undefined when calling getTableStructureByURL().
+Required parameter "subTableKey" was null or undefined when calling getTableStructureByURL().
+/api/rest/tables/{tableCode}/structure/{subTableKey}
+/api/rest/tables/user/{username}/{filename}
+csv
+ffcsv
+xlsx
+/api/rest/users/email/{token}
+/api/rest/users/{token}
+/api/rest/users
+/api/rest/users/password
+/api/rest/users/create
+/api/rest/users/email/request
+/api/rest/users/password/request
+/api/rest/users/token
+/api/rest/users/email
+/api/rest/values/{valueCode}/information
+Required parameter "variableCode" was null or undefined when calling getTablesForVariable().
+/api/rest/variables/{variableCode}/tables
+/api/rest/variables/{variableCode}/values
+/api/rest/variables/{variableCode}/information
+/api/rest/variables
+STATISTIC
+TABLE
+"),[q,$]=C.useState(r.searchResults?.terms||[]),[ee,ae]=C.useState(!1),[fe,he]=C.useState([]),[pe,Ae]=C.useState(null),[xe,Be]=C.useState(null),[Se,Te]=C.useState(Xs.Simple),Ee=Pd(),[He,it]=C.useState(null),[Ne,De]=C.useState({}),[ne,be]=C.useMemo(()=>P.search?[P.searchMode,Dp(P.search)]:[Xs.Simple,
+&&r.searchResults!==null?($([]),F(
+&&(r.searchResults===null||be!==r.lastSearch)&&await pt({initSearchString:be,userSearchString:void 0,source:
+)}return Ot},[r,Ce,s.busy,s.unBusy,a.getCurrentLanguage(),Se,ct,Tt,ue,F,Be,he,$]),_t=C.useCallback(async wt=>{const Ot=q||[];if(!xe&&wt.length==0&&Ot.length===0){O(Di(kt.Statistics));return}const ht=xe?'
+);if(ht==null)return;const yt=Ot[ht],vt=Ot.filter(Gt=>Gt!==yt);$(vt)},[r.searchResults,q,$]),Ya=C.useCallback(async wt=>{[
+:!z.length&&(r.searchResults?.terms?.length||0)===q.length})})}),c.jsx(
+,children:c.jsx(ie,{value:`${a.localize(te.StatisticInfo.VariablesModalHeader)} ${e.code}`})}),c.jsx(
+,header:c.jsx(Za,{onClose:e.onClose,onBackButtonClick:e.onBack,closeButtonAriaLabel:te.StatisticInfo.StatisticModal.CloseButtonAriaLabel,children:c.jsx(
+,ariaLabel:a.localize(te.StatisticInfo.StatisticModal.ShareButton.AriaLabel),onClick:r,children:[c.jsx(Lg,{}),
+,c.jsx(ie,{value:te.StatisticInfo.StatisticModal.ShareButton.Label})]})})}),state:e.state,onOverlayClicked:e.onClose,onSwipeUp:e.onClose,dataTesting:{id:
+,children:c.jsx(ie,{value:te.StatisticInfo.StatisticModal.Title,params:{code:e.code||
+,e.className),header:c.jsx(Za,{onClose:e.onClose,onBackButtonClick:e.onBack,closeButtonAriaLabel:te.StatisticVariablesModal.CloseButtonAriaLabel}),state:e.state,onOverlayClicked:e.onClose,onSwipeUp:e.onClose,dataTesting:{id:
+,children:c.jsx(ie,{value:te.StatisticInfo.QuickInformation})}),c.jsx(
+,children:[e.quickInfos.length>0&&c.jsx(Du,{label:c.jsx(ie,{value:te.StatisticInfo.QuickInformation}),className:
+,children:$()})}),e.variables.length>0&&c.jsx(Du,{label:c.jsx(ie,{value:te.StatisticInfo.Variables}),className:
+,children:c.jsx(ie,{value:te.StatisticInfo.Code,params:{code:e.code||
+search-results-info search-not-found
+search-results-info-not-found-text
+search-results-info-not-found-suggestion
+search-results-info-not-found-suggestion-text
+search-results-info-not-found-suggestion-values
+search-results-info-not-found-suggestion-value
+statisticDetails
+",tableText:s.localize(a.searchResults.tableCodes.length>1?te.SearchInput.TablePl:te.SearchInput.TableSg),statisticTableText:s.localize(e.filterdTablesCount>1?te.SearchInput.TablePl:te.SearchInput.TableSg),statisticText:s.localize(a.searchResults.statisticCodes.length>1?te.SearchInput.StatiticPl:te.SearchInput.StatiticSg)}}):c.jsx(u,{type:
+",tableText:s.localize(a.searchResults.tableCodes.length>1?te.SearchInput.TablePl:te.SearchInput.TableSg),statisticText:s.localize(a.searchResults.statisticCodes.length>1?te.SearchInput.StatiticPl:te.SearchInput.StatiticSg)}})}default:return c.jsx(c.Fragment,{})}});return c.jsxs(
+,children:c.jsx(f,{})}),a?.searchResults?.terms&&c.jsx(
+,children:c.jsx(a1,{value:a.lastSearchMode===Xs.Advanced?te.SearchInput.Query:a.searchResults.terms?.length>1?te.SearchInput.Terms:te.SearchInput.Term,params:{terms:a.searchResults.terms.join(
+,result:
+INTERLINE_STATISTIC
+]),f[0]===ta.Content)r.set(ta.Content,f[1]);else if(f[0]===ta.Statistic)r.set(ta.Statistic,f[1]);else{const y=f[0].split(
+?u:`${s} ${u}`}static getNoOfRowsForHeaderBlock(e,a,s,r){switch(e.blockType){case Bt.Content:return a?2:1;case Bt.Statistic:return 1;case Bt.Variable:if(!r)return Ra([
+invalid linkId. LinkId must start with V(variable), VV(variableValue), S(statistic), F(Function) or C(content) to specify term.
+STATISTICS
+STATISTICSANDCONTENTS
+TableSelectionExceedsLimitError
+,u,void 0),u+=this.getBlockHeight(f))})}getTotalRows(){let e=0;return this.initialState.tableStructure.rowTitle?.forEach(a=>{if(this.visibleBlocks.get(a.blockCode)){const s=this.blockRowSpans.get(a.blockCode);s?e+=s.variableSpan:Ra([
+"?`${ta.Statistic}:${a.statisticCode}`:`${s}&${ta.Statistic}:${a.statisticCode}`,j=this.bodyRows[u].headerCells.length,O=bt.makeCellId(u,j,es.BodyTh),P=r===
+Statistic in caption needs to be unique!
+}}getKeyForCaptionMap(e,a){switch(a){case Bt.Content:return ta.Content;case Bt.Statistic:return ta.Statistic;case Bt.Variable:return(this.initialState.variableBlocks?.[e]).mainVariable;default:return Ra([
+?r:`${a} ${r}`}addStatisticCell(e,a,s,r,u){const f=this.blockColSpans.get(e.blockCode),y=this.blockRowIndices.get(e.blockCode);if(!f||!y){Ra([
+?`${ta.Statistic}:${a.statisticCode}`:`${s}&${ta.Statistic}:${a.statisticCode}`,T=y.firstRow,j=this.headerRows[y.firstRow].headerCells.length,O=bt.makeCellId(T,j,es.Header),P=r===
+}function Cn(p){return Dn(p)?Mn(p):$n(p)}function $s(){return[]}function os(){return!1}d.exports=Wi})(vg,vg.exports)),vg.exports}var G3=q3();const Dg=Ko(G3);class W3{valueProvider;sortOrder=void 0;initialState;columnCoordinates;captionCoordinates;sortMap=new Map;constructor(e,a,s,r,u){if(r){const[y,v]=r.split(
+?`${ta.Content}:${u.content}$`+a:`${s}&${ta.Content}:${u.content}$`+a;break}case Bt.Statistic:r=s===
+?`${ta.Statistic}:${a}`:`${s}&${ta.Statistic}:${a}`;break;case Bt.Variable:{const f=`${this.initialState.variableBlocks[e.blockCode].mainVariable}:${a}`;r=s===
+Statistic or content for value not found!
+",quality:y.quality?{code:y.quality,description:this.qualitySignsProvider.getQualityDescription(y.value,y.quality,this.language)}:void 0,content:O,statistic:P,variables:v.variables.concat(T.variables).concat(j.variables)}}getCellCoordinateInfo(e){let a,s;const r=[];return e.forEach((u,f)=>{if(f===ta.Content){const y=u.split(
+]):a=this.labelProvider.getFunctionLabelByIds(y[0],y[1])}else if(f===ta.Statistic)s?Ra([
+in d?(d=d,a.push(...Ub(d.columnHeader,e),...Ub(d.rowHeader,e),...Ub(d.caption,e))):(d=d,a.push(...$b(d.tableStructure.colTitle,d,e),...$b(d.tableStructure.rowTitle,d,e),...$b(d.tableStructure.filter,d,e))),a.sort((s,r)=>s.localeCompare(r)),a.join(
++s:a}if(e.contentBlocks[d])return e.contentBlocks[d].content;if(e.statisticBlocks[d])return e.statisticBlocks[d].statisticCode}function J3(d,e){let a=[];return e.variableBlocks[d]?(e.variableBlocks[d].mainAttributes.forEach(s=>{a.push(s.attribute),a=a.concat(nx(s))}),a.join(
+):e.statisticBlocks[d]?
+There are more values selcted than the absolute available maximum - therefore it is not even tried to render the table
+gor-table-cell-focused
+gor-table-caption-item
+gor-table-caption-item-content
+gor-table-caption-linked-text
+gor-table-caption
+gor-table
+--gor-table-datacolumns-count
+gor-table-body-header-cell
+--gor-table-caption-height
+th[role='rowheader'], th.gor-table-header-cell-cornercell
+gor-table-header-cell-cornercell
+--gor-table-sroll-margin-left
+var(--color-table-cell-text-color-high)
+var(--color-table-cell-text-color-low)
+--color-table-header-high
+),this.colorHeaderRow(P,Ee,He,ae,fe,Ne);const De=this.tableSizeLimiter?.headerThCellsToRender[Te]??it.headerCells.length-1;let ne=0;for(let be=0;be<=De;be+=1){const me=it.headerCells[be];if(be<2&&O3(me)){const Ce=this.generateCornerCell(me,be,v,T);ne++,Ne.appendChild(Ce)}else{const Ce=be-ne,ue=j&&Te+me.rowSpan==this.headerRows.length,se=this.generateHeaderCell({tablePart:
+gor-table-body-row
+gor-table-body-row-type-data
+gor-table-body-row-type-interline
+gor-table-body-row-type-interline-content
+gor-table-body-row-type-interline-describing-sum
+gor-table-body-row-type-interline-statistic
+gor-table-body-row-type-interline-variable
+gor-table-header-cell
+gor-table-header-cell-corner-cell-second
+gor-table-corner-cell-span
+--gor-table-corner-cell-span-indention
+gor-table-corner-cell-link
+gor-table-header-cell-icon-sort-default
+gor-table-header-cell-icon-sort-asc
+gor-table-header-cell-icon-sort-desc
+gor-table-cell-with-indention
+--gor-table-cell-indention
+gor-table-header-cell-text
+gor-table-header-linked-cell-text
+gor-table-header-cell-icon
+gor-table-header-cell-column-index-first
+gor-table-header-cell-column-last
+gor-table-data-cell
+gor-table-data-cell-column-index-first
+gor-table-data-cell-column-last
+gor-table-data-cell-has-quality
+gor-table-data-cell-scroll-margin
+,this.onTableCellKeyDown),r.quality&&r.quality===
+The table with the currently selected customisations is <strong>available for download</strong>. To display the table in your web browser, please reduce the number of values by customising the table.<p>Note: Don't be surprised if the table initially displayed shows significantly more values than after customising the table.</p>
+Die Tabelle mit den aktuell ausgew√§hlten Anpassungen steht <strong>zum Download zur Verf√ºgung</strong>. Um die Tabelle im Browser anzuzeigen, reduzieren Sie bitte die Anzahl der Werte durch Anpassung der Tabelle.<p>Hinweis: Wundern Sie sich nicht, bei der anfangs angezeigten Tabelle k√∂nnen aktuell deutlich mehr Werte dargestellt werden, als nach einer Anpassung der Tabelle.</p>
+Please reduce the number of values by customising the table. The table cannot be loaded with the currently selected customisations because it contains too many values.<p>Note: Don't be surprised if the table initially displayed shows significantly more values than after customising the table.</p>
+An unknown error occured. If you receive this error multiple times, please [https://www.destatis.de/DE/Service/Kontakt/Genesis/Servicekontakt-GENESIS.html contact] us specifying the selected table number and any adjustments made to the table.
+Zur schnelleren Ansicht wurde die Tabelle auf maximal %rows% Zeilen gek√ºrzt. F√ºr eine vollst√§ndige Darstellung passen Sie die Auswahl der Tabelle an oder nutzen Sie den Download.
+The table has been shortened to a maximum of %rows% rows to speed up the view. For a full display, please adjust the selection of the table or use the download.
+Zur schnelleren Ansicht wurde die Tabelle auf %columns% Spalten gek√ºrzt. F√ºr eine vollst√§ndige Darstellung passen Sie die Auswahl der Tabelle an oder nutzen Sie den Download.
+The table has been shortened to %columns% columns to speed up the view. For a full display, please adjust the selection of the table or use the download.
+Zur schnelleren Ansicht wurde die Tabelle auf maximal %rows% Zeilen und %columns% Spalten gek√ºrzt. F√ºr eine vollst√§ndige Darstellung passen Sie die Auswahl der Tabelle an oder nutzen Sie den Download.
+The table has been shortened to a maximum of %rows% rows and %columns% columns to speed up the view. For a full display, please adjust the selection of the table or use the download.
+Achtung: Die Tabelle ist sehr gro√ü. Zur schnelleren Ansicht wurde sie auf maximal %rows% Zeilen gek√ºrzt. F√ºr eine vollst√§ndige Darstellung passen Sie die Auswahl der Tabelle an oder nutzen Sie den Download.
+Attention: The table is very large. It has been shortened to a maximum of %rows% rows to speed up the view. For a full display, please adjust the selection of the table or use the download.
+Achtung: Die Tabelle ist sehr gro√ü. Zur schnelleren Ansicht wurde sie auf %columns% Spalten gek√ºrzt. F√ºr eine vollst√§ndige Darstellung passen Sie die Auswahl der Tabelle an oder nutzen Sie den Download.
+Attention: The table is very large. It has been shortened to %columns% columns to speed up the view. For a full display, please adjust the selection of the table or use the download.
+Achtung: Die Tabelle ist sehr gro√ü. Zur schnelleren Ansicht wurde sie auf %columns% Spalten und auf maximal %rows% Zeilen gek√ºrzt. F√ºr eine vollst√§ndige Darstellung passen Sie die Auswahl der Tabelle an oder nutzen Sie den Download.
+Attention: The table is very large. It has been shortened to %columns% columns and a maximum of %rows% rows to speed up the view. For a full display, please adjust the selection of the table or use the download.
+Closes table toolbar
+Select another statistic
+New statistic
+gor-table-cell-info-popover
+gor-table-cell-info
+gor-table-cell-variable-items
+gor-table-cell-info-closeButton
+gor-table-cell-variable-item
+gor-table-cell-variable-item-label
+gor-table-cell-variable-item-value
+gor-table-cell-content-item
+gor-table-cell-content-item-label
+gor-table-cell-content-item-value
+gor-table-cell-statistic-item
+gor-table-cell-statistic-item-label
+gor-table-cell-statistic-item-value
+,e.tableSizeLimits.maxRows.toString()).replace(
+gor-table-cell-has-modal
+gor-table-container-rendering
+gor-table-topnote-container
+gor-table-topnote-text
+gor-table-react
+gor-table-react-container
+gor-table-container
+gor-table-note-container
+gor-table-note-text
+gor-table-copyright
+gor-table-toolbar-filter-movingfilter-target
+gor-table-toolbar-filter-movingfilter-target-hover
+.gor-table-toolbar-filters-container-moving
+)return{en:`Content (${d.en})`,de:`Inhalt (${d.de})`}}return d},Rp=d=>d==Bt.Variable?Si.TableToolbar.SettingsModal.VariableButtonText:d==Bt.Content?Si.TableToolbar.SettingsModal.ContentButtonText:d==Bt.Statistic?Si.TableToolbar.SettingsModal.StatisticButtonText:
+,u2=d=>d==Bt.Variable?Si.TableToolbar.SettingsModal.VariableLabelText:d==Bt.Content?Si.TableToolbar.SettingsModal.ContentLabelText:d==Bt.Statistic?Si.TableToolbar.SettingsModal.StatisticLabelText:
+;var Cp={exports:{}},h2=Cp.exports,sv;function f2(){return sv||(sv=1,(function(d,e){(function(a,s){d.exports=s()})(h2,(function(){var a=1e3,s=6e4,r=36e5,u=
+gor-table-toolbar-filter-content-items
+gor-table-toolbar-filter-content-item
+gor-table-toolbar-filter-content-item-active
+gor-table-toolbar-filter-settings
+gor-table-toolbar-filter gor-table-toolbar-filter-common
+gor-table-toolbar-filter-multiple-blocks
+gor-table-toolbar-filter-container
+gor-table-toolbar-filter-input-container-single
+gor-table-toolbar-filter-advanced
+gor-table-toolbar-filter-advanced-option gor-table-toolbar-filter-advanced-option-range
+gor-table-toolbar-filter-advanced-option-range-control-from
+gor-table-toolbar-filter-advanced-option-range-control-to
+gor-table-toolbar-filter-advanced-option-range-apply
+gor-table-toolbar-filter-advanced-option gor-table-toolbar-filter-advanced-option-last
+gor-table-toolbar-filter-advanced-option-last-control
+gor-table-toolbar-filter-advanced-option-last-apply
+gor-table-toolbar-filter-movable
+gor-table-toolbar-filters-container-moving
+--gor-table-toolbar-filter-level-internal
+gor-table-toolbar-filter-input-container
+gor-table-toolbar-filter-input-container-block-0
+gor-table-toolbar-filter-input-container-block-1
+gor-table-toolbar-filter-input
+gor-table-toolbar-filter-input-icons
+gor-table-toolbar-filter-input-icons-level
+gor-table-toolbar-filter-input-control
+gor-table-toolbar-filter-input-control-multi
+gor-table-toolbar-filter-has-advanced
+gor-table-toolbar-filter-setting-button-container
+gor-table-toolbar-filter-input-container-block-2
+gor-table-toolbar-filter-showhide
+gor-table-toolbar-filters
+gor-table-toolbar-filters-header
+gor-table-toolbar-filters-header-text
+gor-table-toolbar-filters-checkboxes
+gor-table-toolbar-filters-items
+table-toolbar-no-filters
+table-toolbar-variable-change-modal
+table-toolbar-variable-change-modal-content
+table-toolbar-variable-change-modal-possible-blocks-container
+table-toolbar-variable-change-modal-hint-container
+table-toolbar-variable-change-modal-buttons
+table-toolbar-variable-change-modal-button table-toolbar-variable-change-modal-button-cancel
+table-toolbar-variable-change-modal-button table-toolbar-variable-change-modal-button-apply
+gor-table-toolbar
+gor-table-toolbar-container
+gor-table-toolbar-common
+gor-table-toolbar-common-header
+gor-table-toolbar-common-filters
+gor-table-toolbar-lead-columns
+gor-table-toolbar-header-rows
+table-quality-signs-control
+table-quality-signs-info
+table-quality-signs-info-items
+table-quality-signs-info-item
+table-quality-signs-info-item-name
+table-quality-signs-info-item-description
+table-quality-signs-info-note
+table-quality-signs-info-note-header
+table-quality-signs-info-note-text
+,e.className),header:c.jsx(Za,{onClose:e.onClose,onBackButtonClick:e.onBack,closeButtonAriaLabel:te.StatisticTablePage.QualitySignsInfoModal.CloseButtonAriaLabel}),contentHeader:c.jsx(ie,{value:te.StatisticTablePage.QualitySignsInfoModal.Header}),state:e.state,onOverlayClicked:e.onClose,onSwipeUp:e.onClose,dataTesting:{id:
+}`;return ky(F)},[u?.params?.useRawUrl,u?.params?.url]),T=C.useCallback(z=>Ba.getService().addToast({description:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.FeatureNotAvailable),type:
+,e.className),header:c.jsx(Za,{onClose:y,onBackButtonClick:f,closeButtonAriaLabel:te.StatisticTablePage.TableToolBar.ShareTableModal.CloseShareModalButtonAriaLabel,tabIndex:0}),contentHeader:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.ShareTableModal.CardTitle}),state:r,onOverlayClicked:y,onSwipeUp:y,dataTesting:{id:
+:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.AriaName),children:[c.jsx(xt,{dataTesting:{id:
+,title:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.Facebook),ariaLabel:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.Facebook.AriaLabel),onClick:T,value:
+,title:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.Twitter),ariaLabel:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.Twitter.AriaLabel),onClick:T,value:
+,title:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.Pinterest),ariaLabel:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.Pinterest.AriaLabel),onClick:T,value:
+,title:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.Instagram),ariaLabel:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.Instagram.AriaLabel),onClick:T,value:
+,title:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.Email),ariaLabel:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.Email),onClick:T,value:
+:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.InputFieldLabel),children:[c.jsx(
+,children:a.localize(te.StatisticTablePage.TableToolBar.ShareTableModal.InputFieldLabel)}),c.jsx(xt,{dataTesting:{id:
+,onClick:y,tabIndex:0,children:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.ShareTableModal.CloseButton})})})]})})}),A2=C.memo(function(e){const[a,s]=C.useState(null),{modalState:r,onBack:u,onClose:f}=si(e.name);return C.useEffect(()=>{(async()=>{try{const y=await Vt.getService().getImprintText();s(y)}catch(y){console.error(
+&&s===null){let q,$=[];try{$=await(await Vt.getService().getApi(d3,
+)).getFAQ()}catch(ee){await Ba.getService().onApiError(ee)}finally{r($),j($),q=await Vt.getService().getFaqText(),f(q)}}})()},[O]),C.useEffect(()=>{const q=s?.filter($=>{const ee=N0(a.localize($.question)),ae=N0(a.localize($.answer));return ee.toLowerCase().indexOf(y.toLowerCase())!==-1||ae.toLowerCase().indexOf(y.toLowerCase())!==-1})||null;j(q)},[y]),c.jsx(Fa,{className:ba(
+),j(null)),xe},[P,j]),fe=C.useCallback(async pe=>{v(pe),await ae(pe,q)},[v,ae,q]);C.useEffect(()=>{ee()},[r]);const he=C.useCallback(async()=>{$(!0);const pe=await ae(y,!0),Ae=await Vt.getService().shouldClientValidationBeSkipped();if(pe||Ae){F(!0);const xe=await Vt.getService().getApi(Hc,
+)),Se},[j,P,ee]),pe=C.useCallback(async()=>{if(!a.uuid){await f();return}$(!0);const xe=await he(y,!0),Be=await Vt.getService().shouldClientValidationBeSkipped();if(xe||Be){F(!0);const Se=await Vt.getService().getApi(Hc,
+);try{const T=await Vt.getService().getApi(Hc,
+in j&&f&&(j.statisticalCategoryCodes?.[1]||null)!==f||
+in y&&e&&(y.statisticalCategoryCodes?.[1]||null)!==e||s===
+){Ne(c.jsx(ie,{value:te.LogInAndRegister.PassEmpty})),he(Gt=>({...Gt||Zh.getInvalidResult(),isNotEmpty:!1,isLengthValid:!1,isValid:!1}));return}else if(vt.error===
+){Ne(c.jsx(ie,{value:te.LogInAndRegister.RequirementsNotFulfilled})),he(Zh.getInvalidResult());return}}},[He,ue,Te,Be,Ae,he,ae,Ne,me,ne]),Na=C.useCallback(async vt=>{re(!0),vt.preventDefault();const Gt=await ca(!0),ot=await Vt.getService().shouldClientValidationBeSkipped();if(Gt||ot){Fe(!0);try{const Ta=await Vt.getService().getApi(Hc,
+)return z(!1),ee(c.jsx(ie,{value:te.LogInAndRegister.NotAnAcceptableEmail})),!0;if(me.error===
+)return z(!1),ee(c.jsx(ie,{value:te.LogInAndRegister.SameMailAsOldOne})),!0}return!1},[z,ee]),be=C.useCallback(async()=>{if(!a.uuid){await y();return}xe(!0);const me=await it(!0),Ce=await Vt.getService().shouldClientValidationBeSkipped();if(me||Ce){const ue=await Vt.getService().getApi(Hc,
+download-modal-overlay-button
+,children:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.AddDashboardModal.NewDashboardSelect})})}),[]),[j,O]=C.useState([T]),[P,z]=C.useState(T),[F,q]=C.useState(
+AddDashboardModal.add.getApi
+,description:s.localize(te.StatisticTablePage.TableToolBar.AddDashboardModal.Success.DashboardCreated,{dashboardName:F}),id:
+,description:te.StatisticTablePage.TableToolBar.AddDashboardModal.Errors.DashboardCreationFailed,id:
+);try{const Fe=await Vt.getService().getDashboard();await re.createDashboardComponnet({uuid:a.uuid,dashboardCode:Re,dashboardComponentUpdate:{column:0,columnSpan:Fe?.defaultColumnsCount||1,dashboardCode:Re,name:he,row:0,rowSpan:Fe?.defaultTableRowsSpan||1,type:b3.Table,initialState:se.initialState,tableCode:se.table.code}}),await Ba.getService().addToast({type:
+,description:s.localize(te.StatisticTablePage.TableToolBar.AddDashboardModal.Success.ComponentCreated,{dashboardName:F,componentName:he}),id:
+,description:te.StatisticTablePage.TableToolBar.AddDashboardModal.Errors.ComponentCreationFailed,id:
+,e.className),header:c.jsx(Za,{onClose:v,onBackButtonClick:y,closeButtonAriaLabel:te.StatisticTablePage.TableToolBar.AddDashboardModal.CloseButtonAriaLabel}),contentHeader:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.AddDashboardModal.CardTitle}),state:f,onOverlayClicked:v,onSwipeUp:v,dataTesting:{id:
+,label:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.AddDashboardModal.SelectDashboard}),dataIdProperty:
+},title:te.StatisticTablePage.TableToolBar.AddDashboardModal.Dashboard}),c.jsx(ko,{className:
+,label:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.AddDashboardModal.CreateNewDashboard}),dataTesting:{id:
+,label:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.AddDashboardModal.NameComponent}),dataTesting:{id:
+},children:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.AddDashboardModal.CancelButton})}),c.jsx(xt,{className:
+},children:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.AddDashboardModal.AddButton})})]})]})})}),Z2=C.memo(function(e){const a=C.useContext(oa),[s,r]=C.useState(null),{modalState:u,onBack:f,onClose:y}=si(e.name);return C.useEffect(()=>{(async()=>{const v=await Vt.getService().getDashboardEditInfoText();r(v)})()},[]),c.jsx(Fa,{className:ba(
+;try{const Ae=(await fe.getEnvironment()).api?.docNames;Ae&&(pe=`/docs/${a.localize(Ae)}`);const xe=(await fe.getWebServiceInfo()).restUrl;xe&&(he=xe)}catch(Ae){await Ba.getService().onApiError(Ae)}finally{const Ae=await fe.getWebServiceApiText();u(Ae),y(he),T(pe)}})()},[Vt.getService,a]);const q=C.useMemo(()=>{if(!s.token)return
+;const fe=a.localize(te.WebServiceApi.Token.Header),he=a.localize(te.WebServiceApi.CopyTitle);return`<div class=
+;const fe=a.localize(te.WebServiceApi.Buttons.Copy.Title),he=a.localize(te.WebServiceApi.Buttons.Copy.Text),pe=a.localize(te.WebServiceApi.Buttons.Copy.AriaLabel),Ae=a.localize(te.WebServiceApi.Buttons.Refresh.Title),xe=a.localize(te.WebServiceApi.Buttons.Refresh.Text),Be=a.localize(te.WebServiceApi.Buttons.Refresh.AriaLabel);return`<div class=
+>${xe}</button></div>`},[s.token,a.localize]),ee=C.useCallback(async()=>{if(s.token){const fe=L1(s.token);Ba.getService().addToast({description:fe?a.localize(te.WebServiceApi.Token.TokenSuccessfullCopied):a.localize(te.WebServiceApi.Token.TokenCopiedFailed),type:fe?
+);try{const he=await(await Vt.getService().getApi(Hc,
+,e.className),header:c.jsx(Za,{onClose:z,onBackButtonClick:P,closeButtonAriaLabel:te.WebServiceApi.CloseButtonAriaLabel}),contentHeader:c.jsx(ie,{value:te.WebServiceApi.WebServiceApiTitle}),state:O,onOverlayClicked:z,onSwipeUp:z,dataTesting:{id:
+statistic-table-getTableTermDefinition
+StatisticTableTermModal
+statistic-table-term-property
+statistic-table-term-property-label
+statistic-table-term-property-value
+in s){const F=R1(te.StatisticTablePage.TermModal.Unit,s.name??E1,(q,$,ee)=>q===
+?$||ee:`${$} (${ee})`);return s.name?c.jsx(ie,{value:F}):c.jsx(ie,{value:te.StatisticTablePage.TermModal.Unit})}return c.jsx(ie,{value:s?.name})}return c.jsx(c.Fragment,{})},z=()=>s?c.jsxs(c.Fragment,{children:[c.jsx(
+,children:c.jsx(ie,{value:te.StatisticTablePage.TermModal.Description})}),
+,children:c.jsx(ie,{value:te.StatisticTablePage.TermModal.NoDescription})})]}):c.jsx(c.Fragment,{});return C.useEffect(()=>{u===
+,state:u,header:c.jsx(Za,{onClose:T,onBackButtonClick:v,closeButtonAriaLabel:te.StatisticTablePage.TermModal.CloseButtonAriaLabel}),onOverlayClicked:T,onSwipeUp:T,children:c.jsxs(
+,lA=C.memo(function(e){const a=C.useContext(oa),s=C.useContext(pr),r=C.useContext(Xo),u=C.useContext(rc),f=Pd(),y=Ba.getService(),[v,T]=C.useState(()=>e.areQualitySignsShown),j=a.getCurrentLanguage(),O=si(dx),P=C.useCallback(async pe=>{if(!(!pe||!r.uuid||!r.isAuthenticated)){await f.busy(`StatisticTableDownloadModal.${e.id||
+}`);try{const Ae=await Vt.getService().getApi(q0,u.scope),xe={uuid:r.uuid,tableCode:e.tableId,downloadFormat:pe,language:j,initialStateJST:e.structure==null?void 0:new nv(e.structure).getPreparedInitialState(v)};await Ae.batchDownload(xe),await y.addToast({description:a.localize(te.StatisticTablePage.TableToolBar.DownloadTableModal.BatchDownloadStartedToast),type:
+})}catch(Ae){console.error(Ae),await F(Ae)}finally{await f.unbusy(`StatisticTableDownloadModal.${e.id||
+}`),await O.onClose()}}},[e.tableId,e.structure?.initialState,j,v,u.scope,r.uuid,r.isAuthenticated]),z=C.useCallback(async pe=>{if(pe!=null){await f.busy(`StatisticTableDownloadModal.${e.id||
+}`);try{const Ae=await Vt.getService().getApi(q0,u.scope),xe={tableCode:e.tableId,downloadFormat:pe,language:j,initialStateJST:e.structure==null?void 0:new nv(e.structure).getPreparedInitialState(v),...r.isAuthenticated&&r.uuid?{uuid:r.uuid}:{}},Be=await Ae.downloadRaw(xe),Se=globalThis.URL.createObjectURL(await Be.raw.blob()),Te=document.createElement(
+&&await y.addToast({description:a.localize(te.StatisticTablePage.TableToolBar.DownloadTableModal.TransposeMessage),type:
+})}catch(Ae){await F(Ae)}finally{await f.unbusy(`StatisticTableDownloadModal.${e.id||
+}`),await O.onClose()}}},[e.tableId,e.structure?.initialState,j,v,u.scope,r.isAuthenticated,r.uuid]),F=C.useCallback(async pe=>{pe instanceof Xy?await Ba.getService().onApiError(pe.response):await y.addToast({description:a.localize(te.StatisticTablePage.TableToolBar.DownloadTableModal.ErrorGeneral),type:
+})},[a.localize,Ba.getService().onApiError]),q=C.useCallback(async pe=>{T(pe||!1)},[T]),$=C.useCallback(async()=>{await s.showQualitySignsInfoModal()},[s.showQualitySignsInfoModal]);C.useEffect(()=>(li.getService().on(dv,async pe=>{(e.id||
+}})},`StatisticTableDownloadModalShow.${e.id||
+}`),()=>{li.getService().off(dv,`StatisticTableDownloadModalShow.${e.id||
+,children:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.DownloadTableModal.ChooseDownloadFormat})}),c.jsxs(
+,value:v,onChange:q,children:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.DownloadTableModal.TableQualitySignsControl})}),c.jsx(xt,{className:
+,onClick:$,title:te.StatisticTablePage.TableToolBar.Buttons.Info.Tooltip,children:c.jsx(Rd,{})})]}),c.jsxs(
+,onClick:z,title:te.StatisticTablePage.TableToolBar.DownloadTableModal.XLS.Tooltip,value:$h.Xlsx,children:[c.jsx(To,{}),c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.DownloadTableModal.XLS})]})}),c.jsx(
+,onClick:z,title:te.StatisticTablePage.TableToolBar.DownloadTableModal.CSV.Tooltip,value:$h.Csv,children:[c.jsx(To,{}),c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.DownloadTableModal.CSV})]})}),c.jsx(
+,onClick:z,title:te.StatisticTablePage.TableToolBar.DownloadTableModal.FLAT.Tooltip,value:$h.Ffcsv,children:[c.jsx(To,{}),c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.DownloadTableModal.FLAT})]})})]}),c.jsx(
+,onClick:O.onClose,children:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.DownloadTableModal.CancelButton})})})]}),[v,q,$,z,O.onClose]),fe=C.useCallback(pe=>{const Ae=pe==
+?te.StatisticTablePage.TableToolBar.DownloadTableModal.TooManyValues:te.StatisticTablePage.TableToolBar.DownloadTableModal.UnknownError;return c.jsxs(c.Fragment,{children:[c.jsx(
+,onClick:O.onClose,children:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.DownloadTableModal.OkayButton})})})]})},[O.onClose]),he=C.useMemo(()=>r.isAuthenticated?c.jsxs(c.Fragment,{children:[c.jsx(
+,children:c.jsx(ie,{wiki:!0,value:te.StatisticTablePage.TableToolBar.DownloadTableModal.StartBatchDownload})}),c.jsxs(
+,onClick:P,title:te.StatisticTablePage.TableToolBar.DownloadTableModal.XLS.Tooltip,value:$h.Xlsx,children:[c.jsx(To,{}),c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.DownloadTableModal.XLS})]})}),c.jsx(
+,onClick:P,title:te.StatisticTablePage.TableToolBar.DownloadTableModal.CSV.Tooltip,value:$h.Csv,children:[c.jsx(To,{}),c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.DownloadTableModal.CSV})]})}),c.jsx(
+,onClick:P,title:te.StatisticTablePage.TableToolBar.DownloadTableModal.FLAT.Tooltip,value:$h.Ffcsv,children:[c.jsx(To,{}),c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.DownloadTableModal.FLAT})]})})]}),c.jsx(
+,onClick:O.onClose,children:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.DownloadTableModal.CancelButton})})})]}):c.jsxs(c.Fragment,{children:[c.jsx(
+,children:c.jsx(ie,{wiki:!0,value:te.StatisticTablePage.TableToolBar.DownloadTableModal.LoginFirst})}),c.jsx(
+,onClick:O.onClose,children:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.DownloadTableModal.OkayButton})})})]}),[r.isAuthenticated,O.onClose,P]);return c.jsxs(Fa,{className:
+,header:c.jsx(Za,{onClose:O.onClose,onBackButtonClick:O.onBack,closeButtonAriaLabel:te.StatisticTablePage.TableToolBar.DownloadTableModal.CloseButtonAriaLabel}),contentHeader:c.jsx(ie,{value:te.StatisticTablePage.TableToolBar.DownloadTableModal.CardTitle}),state:ee!==null&&ee!==(e.id||
+);return O?Di(kt.StatisticsSearch,{search:btoa(O.replaceAll(
+,isCodeShown:!0,isCategoryShown:!0,isVariableCodeShown:!1}),F=ic(z);return`${Di(kt.StatisticsFilter,{filter:F})}${location.hash}`}return Di(kt.Home)}case
+,isCodeShown:!0,isCategoryShown:!1,isVariableCodeShown:!0},z=JSON.stringify(P),F=ic(z);return`${Di(kt.StatisticsFilter,{filter:F})}${location.hash}`}return Di(kt.Statistics)}case
+);return O?Di(kt.StatisticsSearch,{search:ic(O.replace(
+?Di(kt.StatisticDetailsInfoModal,{id:O}):Di(kt.StatisticDetails,{id:O}):Di(kt.Statistics)}case
+);return O?Di(kt.TableChart,{id:O,chartType:
+}):Di(kt.Statistics)}case
+)[1];return Di(kt.TableByOldDeepLink,{id:O||P,oldDeepLink:z})}return Di(kt.Statistics)}case
+);return O?Di(kt.TableFilter,{id:O}):Di(kt.Statistics)}case
+);return O?Di(`${kt.Table}#modal=${dx}`,{id:O}):Di(kt.Statistics)}default:return Di(kt.Home)}return Di(kt.Home)},a=f=>{const y=f.split(
+,F)}return{firstPart:O,params:P}}default:return}},u=e(globalThis.location.href);return c.jsx(lC,{to:u,replace:!0})});var yg=(d=>(d.Tables=
+;static StatisticDetailsFilter=
+;static StatisticDetails=
+;static StatisticDetailsInfoModal=
+;static StatisticSearchDetailsFilter=
+;static StatisticSearchDetails=
+;static StatisticsSearchFilter=
+;static StatisticsSearch=
+;static StatisticsFilter=
+;static Statistics=
+;static Table=
+;static TableByOldDeepLink=
+;static TableFilter=
+;static TableChart=
+;static TableFilterChart=
+;static TableSearch=
+;static TableFilterSearch=
+;static TableChartSearch=
+;static TableFilterChartSearch=
+;static StatisticTable=
+;static StatisticTableFilter=
+;static StatisticTableChart=
+;static StatisticTableChartFilter=
+;static StatisticTableSearch=
+;static StatisticTableFilterSearch=
+;static StatisticTableChartSearch=
+;static StatisticTableChartFilterSearch=
+;static VariableDetailsTables=
+;static VariableDetailsTablesFilter=
+,kt.StatisticDetailsFilter,c.jsx(rp,{})),_a(
+,kt.StatisticDetails,c.jsx(rp,{})),_a(
+,kt.StatisticSearchDetails,c.jsx(rp,{})),_a(
+,kt.StatisticSearchDetailsFilter,c.jsx(rp,{})),_a(
+,kt.StatisticsSearchFilter,c.jsx(op,{})),_a(
+,kt.StatisticsSearch,c.jsx(op,{})),_a(
+,kt.StatisticsFilter,c.jsx(op,{})),_a(
+,kt.Statistics,c.jsx(op,{})),_a(
+,kt.StatisticTable,c.jsx(ur,{})),_a(
+,kt.StatisticTableFilter,c.jsx(ur,{isTableFilterShown:!0})),_a(
+,kt.StatisticTableChart,c.jsx(ur,{})),_a(
+,kt.StatisticTableChartFilter,c.jsx(ur,{isTableFilterShown:!0})),_a(
+,kt.StatisticTableSearch,c.jsx(ur,{})),_a(
+,kt.StatisticTableFilterSearch,c.jsx(ur,{isTableFilterShown:!0})),_a(
+,kt.StatisticTableChartSearch,c.jsx(ur,{})),_a(
+,kt.StatisticTableChartFilterSearch,c.jsx(ur,{isTableFilterShown:!0})),_a(
+,kt.Table,c.jsx(ur,{})),_a(
+,kt.TableByOldDeepLink,c.jsx(ur,{})),_a(
+,kt.TableFilter,c.jsx(ur,{isTableFilterShown:!0})),_a(
+,kt.TableChart,c.jsx(ur,{})),_a(
+,kt.TableFilterChart,c.jsx(ur,{isTableFilterShown:!0})),_a(
+,kt.TableSearch,c.jsx(ur,{})),_a(
+,kt.TableFilterSearch,c.jsx(ur,{isTableFilterShown:!0})),_a(
+,kt.TableChartSearch,c.jsx(ur,{})),_a(
+,kt.TableFilterChartSearch,c.jsx(ur,{isTableFilterShown:!0})),_a(
+,kt.VariableDetailsTables,c.jsx(dp,{tab:yg.Tables})),_a(
+,kt.VariableDetailsTablesFilter,c.jsx(dp,{tab:yg.Tables})),_a(
+isNewDataTableButtonDisabled
+new-data-table
+?(ue+1>He.length?(he(0),document.getElementById(`${ee}_new-data-table-item-0`)?.scrollIntoView({behavior:
+})):(he(ue+1),document.getElementById(`${ee}_new-data-table-item-${ue+1}`)?.scrollIntoView({behavior:
+?(ue-1<0?(he(He.length-1),document.getElementById(`${ee}_new-data-table-item-${He.length-1}`)?.scrollIntoView({behavior:
+})):(he(ue-1),document.getElementById(`${ee}_new-data-table-item-${ue-1}`)?.scrollIntoView({behavior:
+},ariaLabel:a.localize(te.HomePage.NewData.ShowStatisticCode.AriaLabel),onChange:xe,tabIndex:e.tabIndex,children:c.jsx(ie,{value:e.checkBoxTitle||te.StatisticsPage.ShowId})})]}),c.jsx(
+:fe!=null?`new-data-table-item-${fe}`:void 0,onKeyDown:it,onFocus:Ne,onBlur:De,children:c.jsxs(
+,{id:`${ee}_new-data-table-item-${ue}`,className:ba(
+:`new-data-table-item-${se}`,
+,children:c.jsx(ie,{value:Ce.timeslice})})]},`new-data-table-item-${se}.${ue}`)})})]})}),e.hasLoadMoreButton!==!1?e.hasLoadMoreButton===!0?c.jsxs(
+,disabled:P>=(e.allTableEntries?.length||0),onClick:ne,children:c.jsx(ie,{value:te.HomePage.NewData.LoadMore})})}),c.jsx(
+);try{const q=await(await Vt.getService().getApi(Vg,r.scope)).getTopStatistics();j.current&&(y(q?.slice(0,3)),T(q?.slice(0,3)))}catch(F){await Ba.getService().onApiError(F)}await u.unBusy(
+)})()},[]);const P=C.useCallback(async F=>{const q=F?.code||null;q&&s.showShareModal(`${Di(kt.StatisticDetails,{id:a.localize(q)||
+,to:Di(kt.StatisticDetails,{id:ee||
+:a.localize(te.HomePage.PopularStatistic.Card.AriaLabel,{statisticCode:ee,statisticHeading:a.localize(q.heading),statisticTitle:a.localize(q.title)}),
+:`home-popular-statistic-item-${ee}`,
+home-popular-statistic-item-content
+home-popular-statistic-item-content-title
+hone-popular-statistic-item-content-description
+home-popular-statistic
+home-popular-statistic-title
+home-popular-statistic-items-mobile
+home-popular-statistic-items-desktop
+")).getInstanceSettings())());return this.instanceSettings=e}catch(e){throw console.error(e),e}finally{this.loadInstanceSettingsPromise=null}};getApiTestingUrls=async()=>{const e=await this.getEnvironment();return e.api?.testingUrls==null?{}:e.api.testingUrls};getApiEnvironmentBasePath=async()=>(await this.getEnvironment()).api?.basePath;getPublicUrl=()=>
+,content:c.jsx(gv,{title:te.HomePage.ComingSoon.CardTitle,tableTexts:te.HomePage.ComingSoon.Table,tabIndex:v,minShownItems:20,showNewColumn:f.features?.showNewColumnInHome,showTypeColumn:f.features?.showTypeColumnInHome,allTableEntries:s,hasLoadMoreButton:!1})};case
+,content:c.jsx(gv,{tabIndex:v,minShownItems:10,showNewColumn:f.features?.showNewColumnInHome,showTypeColumn:f.features?.showTypeColumnInHome,hasLoadMoreButton:f.features?.showLoadMoreButtonInHome,allTableEntries:f.features?.showNewTablesInHome?a.filter(T=>T.type===ac.NeueTabellen):void 0,loadMoreItems:f.home?.loadMoreItems})};default:return null}},u=(y,v)=>r(y,v)||{name:y,content:c.jsx(
+,3e3)]};getTeaserTexts=async()=>(await this.getEnvironment()).home?.teaserTexts;abortAllApiRequests=e=>{this.apiConfiguration[e]?.abortController.abort(),delete this.apiConfiguration[e]};createApiConfiguration=async e=>new Ky({basePath:this.apiBasePath||await this.getApiEnvironmentBasePath(),middleware:[{pre:async a=>{a.init.signal=e},onError:async a=>{if(a.error instanceof Error&&a.error.name===
+api
+,j),await Vt.getService().setConfigurationApiPath(a[j])},[y,a]);C.useEffect(()=>{(async()=>{const j=await Vt.getService().getApiTestingUrls(),O=Object.keys(j);u(O);const P={};O.forEach(q=>{P[q]=j[q],P[j[q]]=q}),s(P);const z=await Vt.getService().getApiEnvironmentBasePath();let F=null;z?F=localStorage.getItem(
+)||O[0],y(F),await Vt.getService().setConfigurationApiPath(P[F]),Vt.getService().setAsInitialized()})()},[]);const T=C.useMemo(()=>(xg.api.onValueChanged=v,xg.api.value=f,xg.api.items=r,{api:xg.api}),[v,f,a]);return c.jsx(hx.Provider,{value:T,children:f&&e.children})});hx.Consumer;var zg=(d=>(d.EditDashboardInfo=
+,d.WebServiceAPI=
+,d.Download=
+,d.ChartDownload=
+web-service-api
+,data:Ne}))}),s(it)}catch(Se){await Ba.getService().onApiError(Se)}})()},[]),C.useLayoutEffect(()=>{let Se=null;const Te=()=>{Se&&cancelAnimationFrame(Se),Se=requestAnimationFrame(()=>{let He=
+);try{const Te=await(await Vt.getService().getApi(Hc,
+)}}})()},[r]);const ae=C.useCallback(async Se=>{const Te={login:{...Se}},Ee=await Vt.getService().getApi($0,
+),!0),[s,u,Yn.remove]),Ae=C.useCallback(async()=>{if(!r)return!0;s(!1),u(null),ee(null);const Se=await Vt.getService().getApi($0,
+,children:e.isShown?e.children:null})})});var Sp={exports:{}},N6=Sp.exports,pv;function j6(){return pv||(pv=1,(function(d,e){(function(a,s){a._Highcharts=s(),d.exports=a._Highcharts})(
+&&i.width&&(b=this.textWidth=zn(i.width)),Et(this.styles,i),b&&!$s&&this.renderer.forExport&&delete i.width;let w=D&&i.fontSize||null;w&&(va(w)||/^\d+$/.test(w))&&(i.fontSize+=
+):A.fontSize,Z=this.getBBoxCacheKey([w.rootFontSize,this.textWidth,this.alignValue,A.fontWeight,A.lineClamp,A.textOverflow,K,H]);if(Z&&!i&&(h=B[Z]),!h||h.polygon){if(_||w.forExport){try{b=this.fakeTS&&function(X){let ce=x.querySelector(
+),o.renderer.forExport?sm(Ul,o):Ul[o.index]=void 0,re.chartCount--,o.renderTo.removeAttribute(
+);if(at.download!==void 0)at.href=Ct,at.download=ve,Ae.body.appendChild(at),at.click(),Ae.body.removeChild(at);else try{if(!pe.open(Ct,
+)}catch{pe.location.href=Ct}}let{isTouchDevice:Te}=P(),Ee={exporting:{allowTableSorting:!0,libURL:
+,url:`https://export-svg.highcharts.com?v=${P().version}`,pdfFont:{normal:void 0,bold:void 0,bolditalic:void 0,italic:void 0},printMaxWidth:780,scale:2,buttons:{contextButton:{className:
+,onclick:function(){this.exporting?.print()}},separator:{separator:!0},downloadPNG:{textKey:
+,onclick:async function(){await this.exporting?.exportChart()}},downloadJPEG:{textKey:
+,onclick:async function(){await this.exporting?.exportChart({type:
+})}},downloadPDF:{textKey:
+})}},downloadSVG:{textKey:
+,downloadPNG:
+,downloadJPEG:
+,downloadPDF:
+,downloadSVG:
+,at=ve?.libURL||Re.exporting?.libURL;return{type:_e,filename:(ve?.filename||
+):Xe&&_e?.exporting?.allowHTML&&(Xe='<foreignObject x=
+}),qt&&qt.setState(0),Lt.exporting&&(Lt.exporting.openMenu=!1),Va(Lt.renderTo,{overflow:
+,function(){Lt.exporting?.openMenu&&la.hideMenu()})),_e.forEach(function(ha){if(typeof ha==
+&&Dt.isDataTableVisible&&(ha.textKey=
+}),Lt.exporting&&(Lt.exporting.openMenu=!0),pi(Lt,
+),Ze[Dt]=qt.onmouseout=qt.onmouseover=qt.ontouchstart=qt.onclick=null,Na(qt))}),Ze.length=0,Xe&&(Xe.forEach(function(qt){qt()}),Xe.length=0)}async downloadSVG(ve,_e){let at,Ze={svg:ve,exportingOptions:_e,exporting:this};if(pi(At.prototype,
+},Ke.body),qt=_e.renderTo.style.width,Dt=_e.renderTo.style.height,Lt=Xe.exporting?.sourceWidth||Xe.chart.width||/px$/.test(qt)&&parseInt(qt,10)||(Xe.isGantt?800:600),Ut=Xe.exporting?.sourceHeight||Xe.chart.height||/px$/.test(Dt)&&parseInt(Dt,10)||400;Ka(Xe.chart,{animation:!1,renderTo:rt,forExport:!0,renderer:
+,{chartCopy:Nt}),at=At.sanitizeSVG(at,Xe),Xe=void 0,Nt.destroy(),Na(rt),at}getSVGForExport(ve,_e){let at=this.options;return this.getSVG(Ot({chart:{borderRadius:0}},at.chartOptions,_e,{exporting:{sourceWidth:ve?.sourceWidth||at.sourceWidth,sourceHeight:ve?.sourceHeight||at.sourceHeight}}))}inlineStyles(){let ve,_e=At.inlineDenylist,at=At.inlineAllowlist,Ze={},Xe=ca(
+)||[]});try{let Lt;for(let Nt of(this.getSVGForExport(ve,_e),qt?Array.from(qt):[]))if(rt=Nt.getAttributeNS(
+exporting-group
+Exporting
+);if(Re.download!==void 0)Re.href=ue,Re.download=se,F.body.appendChild(Re),Re.click(),F.body.removeChild(Re);else try{if(!z.open(ue,
+])){let jt=Pe?.[Tt];if(jt)try{let pt=await it.fetch(jt);if(!pt.ok)throw Error(`Failed to fetch font: ${jt}`);let _t=await pt.blob(),na=new FileReader,ca=await new Promise((Va,Na)=>{na.onloadend=()=>{typeof na.result==
+?Va(na.result.split(
+,async function(Ke){let{svg:mt,exportingOptions:ct,exporting:Tt,preventDefault:jt}=Ke;if(ct?.type===
+){jt?.();try{let{type:pt,filename:_t,scale:na,libURL:ca}=O().Exporting.prepareImageOptions(ct);pt===
+))return;De(xe().prototype,{exportChartLocal:async function(Ke,mt){await this.exporting?.exportChart(Ke,mt)}}),Te(Be);let Pe=Se().exporting?.buttons?.contextButton?.menuItems;Pe&&Pe.push(
++Q,de)}function Dt(R){return Xe(R).map(S=>{let L=at(Ze(qt(S),R.renderer.forExport));return L?`<li>${L}</li>`:
+,function(L){S.onDataTableCreated(L)}),this.addEvent(R,
+,function(L){L.wasHidden&&(S.dataTableDiv=L.element,setTimeout(function(){S.focusDataTable()},300))}),this.addEvent(R,
+,function(){S.viewDataTableButton&&S.viewDataTableButton.setAttribute(
+)}),R.exporting&&this.addEvent(R,
+,viewTableButton:R.exporting?.getCSV?this.getDataTableButtonText(J):
+,annotationsList:Q},we=Re.i18nFormat(S,ye,R);return this.dataTableButtonId=J,this.sonifyButtonId=W,Ri(we)}defaultAfterChartFormatter(){let R=this.chart,S=R.options.accessibility.screenReaderSection.afterChartFormat;if(!S)return
+,this.chart.renderer.forExport)}getLongdescText(){let R=this.chart.options,S=R.caption,L=S&&S.text,V=this.getLinkedDescription();return R.accessibility.description||V||L||
+}getDataTableButtonText(R){let S=this.chart;return'<button id=
+,this.chart.renderer.forExport)}getEndOfChartMarkerText(){let R=ha(`highcharts-end-of-chart-marker-${this.chart.index}`);if(R)return R.outerHTML;let S=this.chart,L=S.langFormat(
+}onDataTableCreated(R){let S=this.chart;if(S.options.accessibility.enabled){this.viewDataTableButton&&this.viewDataTableButton.setAttribute(
+,{chart:S}),R.tree.attributes=L}}focusDataTable(){let R=this.dataTableDiv,S=R&&R.getElementsByTagName(
+,-1),S.onclick=function(W){(L.options.accessibility&&L.options.accessibility.screenReaderSection.onPlayAsSoundClick||V).call(this,W,L)})}initDataTableButton(R){let S=this.viewDataTableButton=ha(R),L=this.chart,V=R.replace(
+:!!ha(V)}),S.onclick=L.options.accessibility.screenReaderSection.onViewDataTableClick||function(){L.exporting?.viewData()})}getAxesDescription(){let R=this.chart,S=function(de,ye){let we=R[de];return we.length>1||we[0]&&br(we[0].options.accessibility&&we[0].options.accessibility.enabled,ye)},L=!!R.types&&0>R.types.indexOf(
+),{chart:S,names:L.map(function(V){return ua(V)}),ranges:L.map(function(V){return Nt(V)}),numAxes:L.length})}destroy(){this.announcer&&this.announcer.destroy()}},{attr:Kn}=xe(),{getChartTitle:Wt,unhideChartElementFromAT:vr}=pt,{getFakeMouseEvent:Bs}=Ne;function as(R){return R.exporting?.svgElements?.[0]}class is extends ri{init(){let S=this.chart,L=this;this.addEvent(S,
+,function(){L.onMenuHidden()}),this.createProxyGroup()}onMenuHidden(){let S=this.chart.exporting?.contextMenuEl;S&&S.setAttribute(
+),this.setExportButtonExpandedState(
+)}onMenuShown(){let S=this.chart,L=S.exporting?.contextMenuEl;L&&(this.addAccessibleContextMenuAttribs(),vr(S,L)),this.setExportButtonExpandedState(
+)}setExportButtonExpandedState(S){this.exportButtonProxy&&this.exportButtonProxy.innerElement.setAttribute(
+accessibility.exporting.menuButtonLabel
+accessibility.exporting.chartMenuLabel
+),S.renderer.forExport),V=S.langFormat(
+,{chart:this.chart,itemName:rs(S.name,this.chart.renderer.forExport),item:S}),de={tabindex:-1,
+onViewDataTableClick
+viewAsDataTableButtonText
+tableSummary
+},table:{viewAsDataTableButtonText:
+,tableSummary:
+}},exporting:{chartMenuLabel:
+}}}});let id=Hl,Zn=xe();Zn.i18nFormat=id.i18nFormat,Zn.A11yChartUtilities=pt,Zn.A11yHTMLUtilities=Ne,Zn.AccessibilityComponent=ri,Zn.KeyboardNavigationHandler=wt,Zn.SeriesAccessibilityDescriber=Qr,id.compose(Zn.Chart,Zn.Legend,Zn.Point,Zn.Series,Zn.SVGElement,Zn.RangeSelector);let ol=xe();return pe.default})())})(Mp)),Mp.exports}$6();class F1{constructor(e){if(this.baseURL=e,!e)throw new Error(
+GOR-CHARTS-DOWNLOAD-DIAGRAM-EVENT
+{tableName} - {tableCode}
+table.
+To the table
+Schlie√üt Modal f√ºr den Diagramm-Download
+Closes the modal to download a chart
+}},credits:{enabled:!0,text:$},exporting:{sourceWidth:1200,sourceHeight:900,allowHTML:!0,buttons:{contextButton:{enabled:!1}},style:{fontFamily:
+}}}}},fallbackToExportServer:!1},tooltip:{headerFormat:
+"}))}}const ju=C.createContext({tabIndex:0,activeTab:null,toogleTab:()=>null,scrollToTable:()=>Promise.resolve(),data:[],metadata:null,labelProvider:null,language:
+,tableCode:
+}getTitleOfContentSelection(){return this.localization.Diagram.TitleContentSelection[this.language]}getTitleOfTimeSelection(){return this.localization.Diagram.TitleTimeSelection[this.language]}getStatsticLabel(e){return this.metadata.statistics?.[e].label[this.language]||
+";for(const s in e)s===ta.Statistic&&(a=`<div>${this.getStatsticLabel(e[s])}</div>${a}`);return a}getAllNonStatisticCoordinatesForLegendTitle(e){let a=
+;for(const s in e)if(s!==ta.Statistic){const r=e[s];a+=`<div class=
+})`}getTableCodeSelection(){return this.metadata.table.code||
+}getCubeTexts(e){const a={};return e.forEach(s=>{let r=[];const u=s.fixedVariables[ta.Statistic];u&&r.push(this.getStatsticLabel(u));for(let[y,v]of Object.entries(s.fixedVariables))y===ta.Statistic||y===ta.Content||v&&r.push(this.getVariableLabel(y)+
+,children:[c.jsx(ie,{value:St.Diagram.VariableChangeHintPart1}),c.jsx(xt,{onClick:a.scrollToTable,className:
+gor-charts--chart-download-modal
+chart-download-modal-container
+chart-download-modal-description
+chart-download-modal-display-options
+chart-download-modal-display-option
+chart-download-modal-display-option-pdf
+chart-download-modal-overlay-button
+chart-download-modal-display-option-jpeg
+chart-download-modal-display-option-png
+chart-download-modal-display-option-svg
+chart-download-modal-buttons
+chart-download-modal-buttons-cancel-button
+chart-download-modal-button chart-download-modal-close-button
+download
+charts-toolbar-to-table
