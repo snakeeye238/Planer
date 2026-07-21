@@ -13,12 +13,13 @@ jobs:
           ref: tmp-genesis-data-export
       - name: Fetch public GENESIS endpoints
         run: |
+          rm -rf tmp_genesis_export
           mkdir -p tmp_genesis_export
           python - <<'PY'
           import requests,json,os
-          base='https://genesis.destatis.de/datenbank/online/api/rest'
+          bases=['https://genesis.destatis.de/api/rest','https://www-genesis.destatis.de/api/rest']
           s=requests.Session()
-          h={'User-Agent':'Mozilla/5.0','Accept':'application/json'}
+          h={'User-Agent':'Mozilla/5.0','Accept':'application/json, application/octet-stream, */*','Referer':'https://genesis.destatis.de/datenbank/online/statistic/61211/table/61211-0003/table-toolbar'}
           paths=[
             '/tables/61211-0003/data',
             '/tables/61211-0003/structure',
@@ -27,12 +28,16 @@ jobs:
             '/tables/61211-0003/download/ffcsv/de'
           ]
           log=[]
-          for p in paths:
-            r=s.get(base+p,headers=h,timeout=180,allow_redirects=True)
-            fn=p.strip('/').replace('/','__')
-            ext='.json' if 'json' in r.headers.get('content-type','') else '.bin'
-            open('tmp_genesis_export/'+fn+ext,'wb').write(r.content)
-            log.append({'path':p,'url':r.url,'status':r.status_code,'type':r.headers.get('content-type'),'length':len(r.content),'head':r.text[:1000] if len(r.content)<2000000 else r.text[:200]})
+          for bi,base in enumerate(bases):
+            for p in paths:
+              try:
+                r=s.get(base+p,headers=h,timeout=180,allow_redirects=True)
+                fn=f'b{bi}_'+p.strip('/').replace('/','__')
+                ext='.json' if 'json' in r.headers.get('content-type','') else '.bin'
+                open('tmp_genesis_export/'+fn+ext,'wb').write(r.content)
+                log.append({'base':base,'path':p,'url':r.url,'status':r.status_code,'type':r.headers.get('content-type'),'length':len(r.content),'head':r.text[:1000] if len(r.content)<2000000 else r.text[:200]})
+              except Exception as e:
+                log.append({'base':base,'path':p,'error':repr(e)})
           open('tmp_genesis_export/log.json','w').write(json.dumps(log,ensure_ascii=False,indent=2))
           PY
       - name: Commit results
@@ -40,6 +45,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tmp_genesis_export
-          git commit -m "Temporary: export GENESIS table data" || exit 0
+          git add -A tmp_genesis_export
+          git commit -m "Temporary: retry GENESIS public REST export" || exit 0
           git push origin HEAD:tmp-genesis-data-export
