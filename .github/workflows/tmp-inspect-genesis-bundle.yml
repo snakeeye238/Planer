@@ -1,0 +1,52 @@
+name: Temporary inspect GENESIS bundle
+on:
+  push:
+    branches: [tmp-genesis-61211-fetch]
+permissions:
+  contents: write
+jobs:
+  inspectbundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: tmp-genesis-61211-fetch
+      - name: Inspect JS bundle
+        run: |
+          mkdir -p tmp_genesis/bundle
+          python - <<'PY'
+          import requests,re,json,os
+          u='https://genesis.destatis.de/datenbank/online/assets/index-DwIopC4g.js'
+          r=requests.get(u,timeout=180,headers={'User-Agent':'Mozilla/5.0'})
+          s=r.text
+          open('tmp_genesis/bundle/status.txt','w').write(f'{r.status_code}\n{len(r.content)}\n')
+          terms=['tablefile','ffcsv','download','export','/api/','statistics','table-toolbar','table/','data/','cube','graphql','axios','fetch(']
+          out=[]
+          for term in terms:
+              start=0
+              while True:
+                  i=s.lower().find(term.lower(),start)
+                  if i<0: break
+                  out.append({'term':term,'pos':i,'snippet':s[max(0,i-600):min(len(s),i+1200)]})
+                  start=i+len(term)
+                  if sum(1 for x in out if x['term']==term)>=100: break
+          open('tmp_genesis/bundle/hits.json','w').write(json.dumps(out,ensure_ascii=False,indent=2))
+          # Extract string literals that look like paths/endpoints.
+          strings=[]
+          for m in re.finditer(r'(["\'])(.{1,400}?)\1',s):
+              v=m.group(2)
+              if any(t in v.lower() for t in ['download','export','table','statistic','api','result','csv','xlsx','zip']):
+                  strings.append(v)
+          uniq=[]
+          for v in strings:
+              if v not in uniq: uniq.append(v)
+          open('tmp_genesis/bundle/strings.txt','w').write('\n'.join(uniq[:10000]))
+          PY
+      - name: Commit bundle inspection
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tmp_genesis/bundle
+          git commit -m "Temporary: inspect GENESIS frontend bundle" || exit 0
+          git push origin HEAD:tmp-genesis-61211-fetch
