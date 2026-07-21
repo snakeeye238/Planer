@@ -1,0 +1,62 @@
+name: Temporary inspect GENESIS UI
+on:
+  push:
+    branches: [tmp-genesis-61211-fetch]
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: tmp-genesis-61211-fetch
+      - name: Install browser
+        run: |
+          python -m pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+      - name: Inspect public table requests
+        run: |
+          cat > /tmp/inspect.py <<'PY'
+          import asyncio, json, os
+          from playwright.async_api import async_playwright
+          async def main():
+              os.makedirs('tmp_genesis/ui',exist_ok=True)
+              events=[]
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch(headless=True)
+                  page=await browser.new_page(viewport={'width':1600,'height':1000},accept_downloads=True)
+                  def req(r):
+                      if any(k in r.url.lower() for k in ['table','data','genesis','cube','result']):
+                          events.append({'kind':'request','method':r.method,'url':r.url,'post_data':r.post_data,'headers':{k:v for k,v in r.headers.items() if k.lower() in ['content-type','accept']}})
+                  async def resp(r):
+                      if any(k in r.url.lower() for k in ['table','data','genesis','cube','result']):
+                          events.append({'kind':'response','status':r.status,'url':r.url,'type':r.headers.get('content-type','')})
+                  page.on('request',req); page.on('response',resp)
+                  url='https://genesis.destatis.de/datenbank/online/statistic/61211/table/61211-0003/table-toolbar'
+                  await page.goto(url,wait_until='networkidle',timeout=120000)
+                  await page.wait_for_timeout(8000)
+                  open('tmp_genesis/ui/body_before.txt','w').write(await page.locator('body').inner_text())
+                  open('tmp_genesis/ui/page_before.html','w').write(await page.content())
+                  await page.screenshot(path='tmp_genesis/ui/page_before.png',full_page=True)
+                  try:
+                      await page.get_by_text('Anpassen',exact=True).first.click(timeout=15000)
+                      await page.wait_for_timeout(4000)
+                      open('tmp_genesis/ui/body_after_adjust.txt','w').write(await page.locator('body').inner_text())
+                      open('tmp_genesis/ui/page_after_adjust.html','w').write(await page.content())
+                      await page.screenshot(path='tmp_genesis/ui/page_after_adjust.png',full_page=True)
+                  except Exception as e:
+                      open('tmp_genesis/ui/click_error.txt','w').write(repr(e))
+                  open('tmp_genesis/ui/network.json','w').write(json.dumps(events,ensure_ascii=False,indent=2))
+                  await browser.close()
+          asyncio.run(main())
+          PY
+          python /tmp/inspect.py
+      - name: Commit inspection
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tmp_genesis/ui
+          git commit -m "Temporary: inspect GENESIS public UI" || exit 0
+          git push origin HEAD:tmp-genesis-61211-fetch
