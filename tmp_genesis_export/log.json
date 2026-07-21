@@ -1,0 +1,42 @@
+[
+  {
+    "path": "/tables/61211-0003/data",
+    "url": "https://genesis.destatis.de/datenbank/online/api/rest/tables/61211-0003/data",
+    "status": 404,
+    "type": "text/html",
+    "length": 3220,
+    "head": "<!doctype html>\r\n\r\n<html lang=\"de\">\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n\r\n  <title></title>\r\n  <meta name=\"description\" content=\"\">\r\n  <meta name=\"author\" content=\"\">\r\n\r\n\t<style>\r\n@font-face {\r\n  font-family   : 'Statis Sans';\r\n  src           : url( \"/otherhtm/error/StatisSans-Regular.woff2\" ) format( \"woff2\"    ),\r\n                  url( \"/otherhtm/error/StatisSans-Regular.ttf\"   ) format( \"truetype\" );\r\n  font-weight   : 400;\r\n  font-style    : normal;\r\n}\r\n@font-face {\r\n  font-family   : 'Statis Sans';\r\n  src           : url( \"/otherhtm/error/StatisSans-SemiBold.woff2\" ) format( \"woff2\" ),\r\n                  url( \"/otherhtm/error/StatisSans-SemiBold.ttf\"   ) format( \"truetype\" );\r\n  font-weight   : 600;\r\n  font-style    : normal;\r\n}\r\n\r\n\r\n\t*\r\n\t{\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t\tbox-sizing: border-box;\r\n\t\tfont-size: 18px;\r\n\t\tcolor: rgb(54, 75, 99);\r\n\t}\r\n\r\n\thtml\r\n\t{\r\n\t\tfont-family: \"Statis Sans\", Lato, \"Lucida Grande\", Tahoma, Sans-Serif;\r\n\t}\r\n\r\n\tbody\r\n\t{\r\n\t\t/* padding-top: 390px; */\r\n\t\t"
+  },
+  {
+    "path": "/tables/61211-0003/structure",
+    "url": "https://genesis.destatis.de/datenbank/online/api/rest/tables/61211-0003/structure",
+    "status": 404,
+    "type": "text/html",
+    "length": 3220,
+    "head": "<!doctype html>\r\n\r\n<html lang=\"de\">\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n\r\n  <title></title>\r\n  <meta name=\"description\" content=\"\">\r\n  <meta name=\"author\" content=\"\">\r\n\r\n\t<style>\r\n@font-face {\r\n  font-family   : 'Statis Sans';\r\n  src           : url( \"/otherhtm/error/StatisSans-Regular.woff2\" ) format( \"woff2\"    ),\r\n                  url( \"/otherhtm/error/StatisSans-Regular.ttf\"   ) format( \"truetype\" );\r\n  font-weight   : 400;\r\n  font-style    : normal;\r\n}\r\n@font-face {\r\n  font-family   : 'Statis Sans';\r\n  src           : url( \"/otherhtm/error/StatisSans-SemiBold.woff2\" ) format( \"woff2\" ),\r\n                  url( \"/otherhtm/error/StatisSans-SemiBold.ttf\"   ) format( \"truetype\" );\r\n  font-weight   : 600;\r\n  font-style    : normal;\r\n}\r\n\r\n\r\n\t*\r\n\t{\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t\tbox-sizing: border-box;\r\n\t\tfont-size: 18px;\r\n\t\tcolor: rgb(54, 75, 99);\r\n\t}\r\n\r\n\thtml\r\n\t{\r\n\t\tfont-family: \"Statis Sans\", Lato, \"Lucida Grande\", Tahoma, Sans-Serif;\r\n\t}\r\n\r\n\tbody\r\n\t{\r\n\t\t/* padding-top: 390px; */\r\n\t\t"
+  },
+  {
+    "path": "/tables/61211-0003/information",
+    "url": "https://genesis.destatis.de/datenbank/online/api/rest/tables/61211-0003/information",
+    "status": 404,
+    "type": "text/html",
+    "length": 3220,
+    "head": "<!doctype html>\r\n\r\n<html lang=\"de\">\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n\r\n  <title></title>\r\n  <meta name=\"description\" content=\"\">\r\n  <meta name=\"author\" content=\"\">\r\n\r\n\t<style>\r\n@font-face {\r\n  font-family   : 'Statis Sans';\r\n  src           : url( \"/otherhtm/error/StatisSans-Regular.woff2\" ) format( \"woff2\"    ),\r\n                  url( \"/otherhtm/error/StatisSans-Regular.ttf\"   ) format( \"truetype\" );\r\n  font-weight   : 400;\r\n  font-style    : normal;\r\n}\r\n@font-face {\r\n  font-family   : 'Statis Sans';\r\n  src           : url( \"/otherhtm/error/StatisSans-SemiBold.woff2\" ) format( \"woff2\" ),\r\n                  url( \"/otherhtm/error/StatisSans-SemiBold.ttf\"   ) format( \"truetype\" );\r\n  font-weight   : 600;\r\n  font-style    : normal;\r\n}\r\n\r\n\r\n\t*\r\n\t{\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t\tbox-sizing: border-box;\r\n\t\tfont-size: 18px;\r\n\t\tcolor: rgb(54, 75, 99);\r\n\t}\r\n\r\n\thtml\r\n\t{\r\n\t\tfont-family: \"Statis Sans\", Lato, \"Lucida Grande\", Tahoma, Sans-Serif;\r\n\t}\r\n\r\n\tbody\r\n\t{\r\n\t\t/* padding-top: 390px; */\r\n\t\t"
+  },
+  {
+    "path": "/tables/61211-0003/quickinformation",
+    "url": "https://genesis.destatis.de/datenbank/online/api/rest/tables/61211-0003/quickinformation",
+    "status": 404,
+    "type": "text/html",
+    "length": 3220,
+    "head": "<!doctype html>\r\n\r\n<html lang=\"de\">\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n\r\n  <title></title>\r\n  <meta name=\"description\" content=\"\">\r\n  <meta name=\"author\" content=\"\">\r\n\r\n\t<style>\r\n@font-face {\r\n  font-family   : 'Statis Sans';\r\n  src           : url( \"/otherhtm/error/StatisSans-Regular.woff2\" ) format( \"woff2\"    ),\r\n                  url( \"/otherhtm/error/StatisSans-Regular.ttf\"   ) format( \"truetype\" );\r\n  font-weight   : 400;\r\n  font-style    : normal;\r\n}\r\n@font-face {\r\n  font-family   : 'Statis Sans';\r\n  src           : url( \"/otherhtm/error/StatisSans-SemiBold.woff2\" ) format( \"woff2\" ),\r\n                  url( \"/otherhtm/error/StatisSans-SemiBold.ttf\"   ) format( \"truetype\" );\r\n  font-weight   : 600;\r\n  font-style    : normal;\r\n}\r\n\r\n\r\n\t*\r\n\t{\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t\tbox-sizing: border-box;\r\n\t\tfont-size: 18px;\r\n\t\tcolor: rgb(54, 75, 99);\r\n\t}\r\n\r\n\thtml\r\n\t{\r\n\t\tfont-family: \"Statis Sans\", Lato, \"Lucida Grande\", Tahoma, Sans-Serif;\r\n\t}\r\n\r\n\tbody\r\n\t{\r\n\t\t/* padding-top: 390px; */\r\n\t\t"
+  },
+  {
+    "path": "/tables/61211-0003/download/ffcsv/de",
+    "url": "https://genesis.destatis.de/datenbank/online/api/rest/tables/61211-0003/download/ffcsv/de",
+    "status": 404,
+    "type": "text/html",
+    "length": 3220,
+    "head": "<!doctype html>\r\n\r\n<html lang=\"de\">\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n\r\n  <title></title>\r\n  <meta name=\"description\" content=\"\">\r\n  <meta name=\"author\" content=\"\">\r\n\r\n\t<style>\r\n@font-face {\r\n  font-family   : 'Statis Sans';\r\n  src           : url( \"/otherhtm/error/StatisSans-Regular.woff2\" ) format( \"woff2\"    ),\r\n                  url( \"/otherhtm/error/StatisSans-Regular.ttf\"   ) format( \"truetype\" );\r\n  font-weight   : 400;\r\n  font-style    : normal;\r\n}\r\n@font-face {\r\n  font-family   : 'Statis Sans';\r\n  src           : url( \"/otherhtm/error/StatisSans-SemiBold.woff2\" ) format( \"woff2\" ),\r\n                  url( \"/otherhtm/error/StatisSans-SemiBold.ttf\"   ) format( \"truetype\" );\r\n  font-weight   : 600;\r\n  font-style    : normal;\r\n}\r\n\r\n\r\n\t*\r\n\t{\r\n\t\tmargin: 0;\r\n\t\tpadding: 0;\r\n\t\tbox-sizing: border-box;\r\n\t\tfont-size: 18px;\r\n\t\tcolor: rgb(54, 75, 99);\r\n\t}\r\n\r\n\thtml\r\n\t{\r\n\t\tfont-family: \"Statis Sans\", Lato, \"Lucida Grande\", Tahoma, Sans-Serif;\r\n\t}\r\n\r\n\tbody\r\n\t{\r\n\t\t/* padding-top: 390px; */\r\n\t\t"
+  }
+]
