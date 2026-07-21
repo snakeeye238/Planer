@@ -1,0 +1,47 @@
+name: Temporary fetch GENESIS public page
+on:
+  push:
+    branches: [tmp-genesis-61211-fetch]
+permissions:
+  contents: write
+jobs:
+  fetchpage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: tmp-genesis-61211-fetch
+      - name: Fetch and inspect public page
+        run: |
+          mkdir -p tmp_genesis/page
+          python - <<'PY'
+          import requests,re,json,os,urllib.parse
+          s=requests.Session()
+          u='https://genesis.destatis.de/datenbank/online/statistic/61211/table/61211-0003/table-toolbar'
+          r=s.get(u,timeout=120,headers={'User-Agent':'Mozilla/5.0'})
+          open('tmp_genesis/page/page.html','wb').write(r.content)
+          open('tmp_genesis/page/headers.json','w').write(json.dumps(dict(r.headers),indent=2))
+          txt=r.text
+          urls=[]
+          for pat in [r'<script[^>]+src=["\']([^"\']+)',r'<link[^>]+href=["\']([^"\']+)',r'(https?://[^"\'\s<>]+)']:
+              urls += re.findall(pat,txt,re.I)
+          full=[]
+          for x in urls:
+              x=urllib.parse.urljoin(u,x)
+              if x not in full: full.append(x)
+          open('tmp_genesis/page/assets.txt','w').write('\n'.join(full))
+          open('tmp_genesis/page/status.txt','w').write(f'{r.status_code}\n{r.url}\n{len(r.content)}\n')
+          # Save all inline strings mentioning download/data/table API.
+          hits=[]
+          for line in txt.splitlines():
+              if any(k in line.lower() for k in ['download','tablefile','ffcsv','export','api/','61211-0003']): hits.append(line[:10000])
+          open('tmp_genesis/page/hits.txt','w').write('\n'.join(hits))
+          PY
+      - name: Commit public page inspection
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tmp_genesis/page
+          git commit -m "Temporary: inspect GENESIS public page" || exit 0
+          git push origin HEAD:tmp-genesis-61211-fetch
