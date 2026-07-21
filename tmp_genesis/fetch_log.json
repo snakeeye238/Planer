@@ -1,0 +1,34 @@
+[
+  {
+    "endpoint": "https://genesis.destatis.de/genesisWS/rest/2020/data/tablefile",
+    "user": "c665…",
+    "status": 404,
+    "type": "application/json",
+    "length": 155,
+    "head": "{\"Code\":2,\"Content\":\"Ein Fehler ist aufgetreten. (Bitte prüfen und korrigieren Sie Ihren Nutzernamen oder Ihren Token bzw. das Passwort.)\",\"Type\":\"ERROR\"}"
+  },
+  {
+    "endpoint": "https://genesis.destatis.de/genesisWS/rest/2020/data/tablefile",
+    "user": "GAST…",
+    "status": 401,
+    "type": "application/json",
+    "length": 209,
+    "head": "{\"Code\":15,\"Content\":\"Sie sind nicht berechtigt diesen Service aufzurufen oder der Header Ihres Requests enthält nicht alle notwendigen Angaben, sodass Ihre Zugangsdaten nicht erkannt werden.\",\"Type\":\"ERROR\"}"
+  },
+  {
+    "endpoint": "https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile",
+    "user": "c665…",
+    "status": 404,
+    "type": "application/json",
+    "length": 155,
+    "head": "{\"Code\":2,\"Content\":\"Ein Fehler ist aufgetreten. (Bitte prüfen und korrigieren Sie Ihren Nutzernamen oder Ihren Token bzw. das Passwort.)\",\"Type\":\"ERROR\"}"
+  },
+  {
+    "endpoint": "https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile",
+    "user": "GAST…",
+    "status": 401,
+    "type": "application/json",
+    "length": 209,
+    "head": "{\"Code\":15,\"Content\":\"Sie sind nicht berechtigt diesen Service aufzurufen oder der Header Ihres Requests enthält nicht alle notwendigen Angaben, sodass Ihre Zugangsdaten nicht erkannt werden.\",\"Type\":\"ERROR\"}"
+  }
+]
