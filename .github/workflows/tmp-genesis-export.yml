@@ -11,54 +11,78 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: tmp-genesis-data-export
-      - name: Install Playwright
-        run: |
-          python -m pip install --quiet playwright
-          python -m playwright install --with-deps chromium
-      - name: Capture GENESIS browser requests
+      - name: Download and reduce GENESIS data
         run: |
           rm -rf tmp_genesis_export
           mkdir -p tmp_genesis_export
-          cat > /tmp/capture.py <<'PY'
-          import asyncio,json,os
-          from playwright.async_api import async_playwright
-          async def main():
-            events=[]
-            async with async_playwright() as p:
-              browser=await p.chromium.launch(headless=True)
-              context=await browser.new_context(viewport={'width':1600,'height':1000},accept_downloads=True,locale='de-DE')
-              page=await context.new_page()
-              def on_req(r):
-                if any(x in r.url.lower() for x in ['/api/','61211','table','download','structure','data']):
-                  events.append({'kind':'request','method':r.method,'url':r.url,'post_data':r.post_data,'headers':dict(r.headers)})
-              async def on_resp(r):
-                if any(x in r.url.lower() for x in ['/api/','61211','table','download','structure','data']):
-                  rec={'kind':'response','status':r.status,'url':r.url,'headers':dict(r.headers)}
-                  try:
-                    b=await r.body()
-                    rec['length']=len(b)
-                    rec['body_head']=b[:3000].decode('utf-8','replace')
-                  except Exception as e: rec['body_error']=repr(e)
-                  events.append(rec)
-              page.on('request',on_req)
-              page.on('response',on_resp)
-              url='https://genesis.destatis.de/datenbank/online/statistic/61211/table/61211-0003/table-toolbar'
-              await page.goto(url,wait_until='domcontentloaded',timeout=180000)
-              await page.wait_for_timeout(20000)
-              open('tmp_genesis_export/body.txt','w').write(await page.locator('body').inner_text())
-              open('tmp_genesis_export/page.html','w').write(await page.content())
-              await page.screenshot(path='tmp_genesis_export/page.png',full_page=True)
-              open('tmp_genesis_export/network.json','w').write(json.dumps(events,ensure_ascii=False,indent=2))
-              open('tmp_genesis_export/storage.json','w').write(json.dumps({'local':await page.evaluate('Object.assign({}, localStorage)'),'session':await page.evaluate('Object.assign({}, sessionStorage)'),'cookies':await context.cookies()},ensure_ascii=False,indent=2))
-              await browser.close()
-          asyncio.run(main())
+          python - <<'PY'
+          import requests,json,math,collections,os
+          base='https://genesis.destatis.de/genesis/api/rest/tables/61211-0003'
+          headers={'User-Agent':'Mozilla/5.0','Accept':'application/json','Referer':'https://genesis.destatis.de/'}
+          data=requests.get(base+'/data',headers=headers,timeout=240).json()
+          structure=requests.get(base+'/structure',headers=headers,timeout=240).json()
+          information=requests.get(base+'/information',headers=headers,timeout=240).json()
+          ds=data['data'][0]
+          ids=ds['id']; sizes=ds['size']; values=ds['value']; statuses=ds.get('status') or []
+          inverse={}
+          for dim in ids:
+            idx=ds['dimension'][dim]['category']['index']
+            arr=[None]*len(idx)
+            for code,pos in idx.items(): arr[pos]=code
+            inverse[dim]=arr
+          target_codes={
+            'LWPR-12','LWPR-121','LWPR-1211','LWPR-1212','LWPR-1213','LWPR-1214','LWPR-1215','LWPR-1216',
+            'LWPR-122','LWPR-13','LWPR-131','LWPR-132','LWPR-133','LWPR-14','LWPR-141'
+          }
+          labels={}
+          for code,obj in structure.get('variableValues',{}).items():
+            labels[code]=(obj.get('label') or {}).get('de') or code
+          rows=[]
+          for flat,val in enumerate(values):
+            if val is None: continue
+            rem=flat; pos=[0]*len(sizes)
+            for i in range(len(sizes)-1,-1,-1):
+              pos[i]=rem%sizes[i]; rem//=sizes[i]
+            codes={dim:inverse[dim][pos[i]] for i,dim in enumerate(ids)}
+            product=codes.get('PROAT1'); year=int(codes.get('JAHR')); month_code=codes.get('MONAT')
+            if product not in target_codes or year<2006 or year>2026: continue
+            month=int(month_code[-2:])
+            q=statuses[flat] if flat<len(statuses) else None
+            rows.append({'product':labels.get(product,product),'code':product,'year':year,'month':month,'value':val,'quality':q})
+          order=['LWPR-1211','LWPR-1212','LWPR-1213','LWPR-1214','LWPR-1215','LWPR-1216','LWPR-131','LWPR-132','LWPR-133','LWPR-141','LWPR-14','LWPR-12','LWPR-121','LWPR-122','LWPR-13']
+          rank={c:i for i,c in enumerate(order)}
+          rows.sort(key=lambda r:(rank.get(r['code'],999),r['year'],r['month']))
+          lookup={(r['code'],r['year'],r['month']):r['value'] for r in rows}
+          checks={
+            'Brotweizen_2025_05':lookup.get(('LWPR-1211',2025,5)),
+            'Raps_2025_04':lookup.get(('LWPR-131',2025,4)),
+            'Braugerste_2025_02':lookup.get(('LWPR-1215',2025,2))
+          }
+          assert abs(checks['Brotweizen_2025_05']-115.5)<0.001, checks
+          assert abs(checks['Raps_2025_04']-132.5)<0.001, checks
+          assert abs(checks['Braugerste_2025_02']-129.1)<0.001, checks
+          counts=collections.Counter(r['code'] for r in rows)
+          by_year=collections.Counter(r['year'] for r in rows)
+          summary={
+            'source':'Statistisches Bundesamt, GENESIS-Online, Tabelle 61211-0003',
+            'retrieved':'2026-07-21',
+            'tableLastChange':structure.get('table',{}).get('lastChange'),
+            'basis':'2020=100','rowCount':len(rows),'productCount':len(counts),
+            'years':sorted(set(r['year'] for r in rows)),
+            'countsByProduct':dict(counts),'countsByYear':dict(by_year),'checks':checks,
+            'labels':{c:labels.get(c,c) for c in sorted(target_codes)}
+          }
+          with open('tmp_genesis_export/embedded_data.json','w',encoding='utf-8') as f:
+            json.dump(rows,f,ensure_ascii=False,separators=(',',':'))
+          with open('tmp_genesis_export/summary.json','w',encoding='utf-8') as f:
+            json.dump(summary,f,ensure_ascii=False,indent=2)
+          with open('tmp_genesis_export/structure.json','w',encoding='utf-8') as f:
+            json.dump(structure,f,ensure_ascii=False,separators=(',',':'))
           PY
-          python /tmp/capture.py
-      - name: Commit capture
-        if: always()
+      - name: Commit reduced dataset
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A tmp_genesis_export
-          git commit -m "Temporary: capture GENESIS browser requests" || exit 0
+          git commit -m "Temporary: store embedded GENESIS crop price data" || exit 0
           git push origin HEAD:tmp-genesis-data-export
