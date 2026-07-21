@@ -16,14 +16,13 @@ jobs:
           rm -rf tmp_genesis_export
           mkdir -p tmp_genesis_export
           python - <<'PY'
-          import requests,json,math,collections,os
+          import requests,json,collections,gzip,base64,textwrap
           base='https://genesis.destatis.de/genesis/api/rest/tables/61211-0003'
           headers={'User-Agent':'Mozilla/5.0','Accept':'application/json','Referer':'https://genesis.destatis.de/'}
           data=requests.get(base+'/data',headers=headers,timeout=240).json()
           structure=requests.get(base+'/structure',headers=headers,timeout=240).json()
-          information=requests.get(base+'/information',headers=headers,timeout=240).json()
           ds=data['data'][0]
-          ids=ds['id']; sizes=ds['size']; values=ds['value']; statuses=ds.get('status') or []
+          ids=ds['id']; sizes=ds['size']; values=ds['value']; statuses=ds.get('status')
           inverse={}
           for dim in ids:
             idx=ds['dimension'][dim]['category']['index']
@@ -34,55 +33,46 @@ jobs:
             'LWPR-12','LWPR-121','LWPR-1211','LWPR-1212','LWPR-1213','LWPR-1214','LWPR-1215','LWPR-1216',
             'LWPR-122','LWPR-13','LWPR-131','LWPR-132','LWPR-133','LWPR-14','LWPR-141'
           }
-          labels={}
-          for code,obj in structure.get('variableValues',{}).items():
-            labels[code]=(obj.get('label') or {}).get('de') or code
-          rows=[]
+          labels={code:(obj.get('label') or {}).get('de') or code for code,obj in structure.get('variableValues',{}).items()}
+          replacing={'...','/','.','x','-'}
+          def status_at(i):
+            if isinstance(statuses,list): return statuses[i] if i<len(statuses) else None
+            if isinstance(statuses,dict): return statuses.get(str(i),statuses.get(i))
+            return None
+          rows=[]; quality_all=collections.Counter(); quality_skipped=collections.Counter()
           for flat,val in enumerate(values):
-            if val is None: continue
             rem=flat; pos=[0]*len(sizes)
             for i in range(len(sizes)-1,-1,-1):
               pos[i]=rem%sizes[i]; rem//=sizes[i]
             codes={dim:inverse[dim][pos[i]] for i,dim in enumerate(ids)}
             product=codes.get('PROAT1'); year=int(codes.get('JAHR')); month_code=codes.get('MONAT')
             if product not in target_codes or year<2006 or year>2026: continue
-            month=int(month_code[-2:])
-            q=statuses[flat] if flat<len(statuses) else None
-            rows.append({'product':labels.get(product,product),'code':product,'year':year,'month':month,'value':val,'quality':q})
+            q=status_at(flat); quality_all[str(q)]+=1
+            if val is None or q in replacing:
+              quality_skipped[str(q)]+=1
+              continue
+            rows.append({'product':labels.get(product,product),'code':product,'year':year,'month':int(month_code[-2:]),'value':val,'quality':q})
           order=['LWPR-1211','LWPR-1212','LWPR-1213','LWPR-1214','LWPR-1215','LWPR-1216','LWPR-131','LWPR-132','LWPR-133','LWPR-141','LWPR-14','LWPR-12','LWPR-121','LWPR-122','LWPR-13']
           rank={c:i for i,c in enumerate(order)}
           rows.sort(key=lambda r:(rank.get(r['code'],999),r['year'],r['month']))
           lookup={(r['code'],r['year'],r['month']):r['value'] for r in rows}
-          checks={
-            'Brotweizen_2025_05':lookup.get(('LWPR-1211',2025,5)),
-            'Raps_2025_04':lookup.get(('LWPR-131',2025,4)),
-            'Braugerste_2025_02':lookup.get(('LWPR-1215',2025,2))
-          }
+          checks={'Brotweizen_2025_05':lookup.get(('LWPR-1211',2025,5)),'Raps_2025_04':lookup.get(('LWPR-131',2025,4)),'Braugerste_2025_02':lookup.get(('LWPR-1215',2025,2))}
           assert abs(checks['Brotweizen_2025_05']-115.5)<0.001, checks
           assert abs(checks['Raps_2025_04']-132.5)<0.001, checks
           assert abs(checks['Braugerste_2025_02']-129.1)<0.001, checks
-          counts=collections.Counter(r['code'] for r in rows)
-          by_year=collections.Counter(r['year'] for r in rows)
-          summary={
-            'source':'Statistisches Bundesamt, GENESIS-Online, Tabelle 61211-0003',
-            'retrieved':'2026-07-21',
-            'tableLastChange':structure.get('table',{}).get('lastChange'),
-            'basis':'2020=100','rowCount':len(rows),'productCount':len(counts),
-            'years':sorted(set(r['year'] for r in rows)),
-            'countsByProduct':dict(counts),'countsByYear':dict(by_year),'checks':checks,
-            'labels':{c:labels.get(c,c) for c in sorted(target_codes)}
-          }
-          with open('tmp_genesis_export/embedded_data.json','w',encoding='utf-8') as f:
-            json.dump(rows,f,ensure_ascii=False,separators=(',',':'))
-          with open('tmp_genesis_export/summary.json','w',encoding='utf-8') as f:
-            json.dump(summary,f,ensure_ascii=False,indent=2)
-          with open('tmp_genesis_export/structure.json','w',encoding='utf-8') as f:
-            json.dump(structure,f,ensure_ascii=False,separators=(',',':'))
+          counts=collections.Counter(r['code'] for r in rows); by_year=collections.Counter(r['year'] for r in rows)
+          rows2026=[r for r in rows if r['year']==2026]
+          summary={'source':'Statistisches Bundesamt, GENESIS-Online, Tabelle 61211-0003','retrieved':'2026-07-21','tableLastChange':structure.get('table',{}).get('lastChange'),'basis':'2020=100','rowCount':len(rows),'productCount':len(counts),'years':sorted(set(r['year'] for r in rows)),'countsByProduct':dict(counts),'countsByYear':dict(by_year),'qualityAll':dict(quality_all),'qualitySkipped':dict(quality_skipped),'available2026Months':sorted(set(r['month'] for r in rows2026)),'checks':checks,'labels':{c:labels.get(c,c) for c in sorted(target_codes)}}
+          raw=json.dumps(rows,ensure_ascii=False,separators=(',',':')).encode('utf-8')
+          with open('tmp_genesis_export/embedded_data.json','wb') as f: f.write(raw)
+          packed=base64.b64encode(gzip.compress(raw,compresslevel=9)).decode('ascii')
+          with open('tmp_genesis_export/embedded_data.json.gz.b64','w') as f: f.write('\n'.join(textwrap.wrap(packed,120)))
+          with open('tmp_genesis_export/summary.json','w',encoding='utf-8') as f: json.dump(summary,f,ensure_ascii=False,indent=2)
           PY
       - name: Commit reduced dataset
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A tmp_genesis_export
-          git commit -m "Temporary: store embedded GENESIS crop price data" || exit 0
+          git commit -m "Temporary: validate and compress embedded GENESIS data" || exit 0
           git push origin HEAD:tmp-genesis-data-export
