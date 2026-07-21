@@ -1,0 +1,43 @@
+name: Temporary call GENESIS public API
+on:
+  push:
+    branches: [tmp-genesis-61211-fetch]
+permissions:
+  contents: write
+jobs:
+  callapi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: tmp-genesis-61211-fetch
+      - name: Call public REST endpoints
+        run: |
+          mkdir -p tmp_genesis/public_api
+          python - <<'PY'
+          import requests,json,os
+          base='https://genesis.destatis.de/datenbank/online/api/rest'
+          s=requests.Session(); h={'User-Agent':'Mozilla/5.0','Accept':'application/json'}
+          paths=[
+            '/tables/61211-0003/data','/tables/61211-0003/structure',
+            '/tables/61211-0003/information','/tables/61211-0003/quickinformation',
+            '/statistics/61211/tables'
+          ]
+          log=[]
+          for p in paths:
+            try:
+              r=s.get(base+p,headers=h,timeout=180)
+              fn=p.strip('/').replace('/','__')
+              open('tmp_genesis/public_api/'+fn+'.bin','wb').write(r.content)
+              log.append({'path':p,'status':r.status_code,'type':r.headers.get('content-type'),'length':len(r.content),'head':r.text[:500]})
+            except Exception as e: log.append({'path':p,'error':repr(e)})
+          open('tmp_genesis/public_api/log.json','w').write(json.dumps(log,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit API results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tmp_genesis/public_api
+          git commit -m "Temporary: call GENESIS public REST API" || exit 0
+          git push origin HEAD:tmp-genesis-61211-fetch
