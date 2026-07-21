@@ -11,34 +11,32 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: tmp-genesis-data-export
-      - name: Fetch public GENESIS endpoints
+      - name: Inspect frontend service chunks
         run: |
           rm -rf tmp_genesis_export
-          mkdir -p tmp_genesis_export
+          mkdir -p tmp_genesis_export/chunks
           python - <<'PY'
-          import requests,json,os
-          bases=['https://genesis.destatis.de/api/rest','https://www-genesis.destatis.de/api/rest']
-          s=requests.Session()
-          h={'User-Agent':'Mozilla/5.0','Accept':'application/json, application/octet-stream, */*','Referer':'https://genesis.destatis.de/datenbank/online/statistic/61211/table/61211-0003/table-toolbar'}
-          paths=[
-            '/tables/61211-0003/data',
-            '/tables/61211-0003/structure',
-            '/tables/61211-0003/information',
-            '/tables/61211-0003/quickinformation',
-            '/tables/61211-0003/download/ffcsv/de'
-          ]
-          log=[]
-          for bi,base in enumerate(bases):
-            for p in paths:
-              try:
-                r=s.get(base+p,headers=h,timeout=180,allow_redirects=True)
-                fn=f'b{bi}_'+p.strip('/').replace('/','__')
-                ext='.json' if 'json' in r.headers.get('content-type','') else '.bin'
-                open('tmp_genesis_export/'+fn+ext,'wb').write(r.content)
-                log.append({'base':base,'path':p,'url':r.url,'status':r.status_code,'type':r.headers.get('content-type'),'length':len(r.content),'head':r.text[:1000] if len(r.content)<2000000 else r.text[:200]})
-              except Exception as e:
-                log.append({'base':base,'path':p,'error':repr(e)})
-          open('tmp_genesis_export/log.json','w').write(json.dumps(log,ensure_ascii=False,indent=2))
+          import requests,json,re,os
+          origin='https://genesis.destatis.de'
+          chunks=['ServicesApi-c7hB3tCd.js','TableService-Fr8UZoVm.js','StatisticTablePage-Cy7O1ovX.js']
+          out=[]
+          for name in chunks:
+            u=origin+'/datenbank/online/assets/'+name
+            r=requests.get(u,timeout=180,headers={'User-Agent':'Mozilla/5.0'})
+            text=r.text
+            open('tmp_genesis_export/chunks/'+name,'w').write(text)
+            rec={'name':name,'status':r.status_code,'length':len(r.content),'urls':sorted(set(re.findall(r'https?://[^"\'\s]+',text)))}
+            rec['snippets']=[]
+            for term in ['/api/rest','basePath','BASE_PATH','baseURL','download/','getTableData','initialStateJST','TableService']:
+              start=0
+              while True:
+                i=text.find(term,start)
+                if i<0: break
+                rec['snippets'].append({'term':term,'pos':i,'text':text[max(0,i-500):i+1200]})
+                start=i+len(term)
+                if sum(1 for x in rec['snippets'] if x['term']==term)>=20: break
+            out.append(rec)
+          open('tmp_genesis_export/chunk_inspection.json','w').write(json.dumps(out,ensure_ascii=False,indent=2))
           PY
       - name: Commit results
         if: always()
@@ -46,5 +44,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A tmp_genesis_export
-          git commit -m "Temporary: retry GENESIS public REST export" || exit 0
+          git commit -m "Temporary: inspect GENESIS service chunks" || exit 0
           git push origin HEAD:tmp-genesis-data-export
