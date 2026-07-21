@@ -1,0 +1,45 @@
+name: Temporary GENESIS export
+on:
+  push:
+    branches: [tmp-genesis-data-export]
+permissions:
+  contents: write
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: tmp-genesis-data-export
+      - name: Fetch public GENESIS endpoints
+        run: |
+          mkdir -p tmp_genesis_export
+          python - <<'PY'
+          import requests,json,os
+          base='https://genesis.destatis.de/datenbank/online/api/rest'
+          s=requests.Session()
+          h={'User-Agent':'Mozilla/5.0','Accept':'application/json'}
+          paths=[
+            '/tables/61211-0003/data',
+            '/tables/61211-0003/structure',
+            '/tables/61211-0003/information',
+            '/tables/61211-0003/quickinformation',
+            '/tables/61211-0003/download/ffcsv/de'
+          ]
+          log=[]
+          for p in paths:
+            r=s.get(base+p,headers=h,timeout=180,allow_redirects=True)
+            fn=p.strip('/').replace('/','__')
+            ext='.json' if 'json' in r.headers.get('content-type','') else '.bin'
+            open('tmp_genesis_export/'+fn+ext,'wb').write(r.content)
+            log.append({'path':p,'url':r.url,'status':r.status_code,'type':r.headers.get('content-type'),'length':len(r.content),'head':r.text[:1000] if len(r.content)<2000000 else r.text[:200]})
+          open('tmp_genesis_export/log.json','w').write(json.dumps(log,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tmp_genesis_export
+          git commit -m "Temporary: export GENESIS table data" || exit 0
+          git push origin HEAD:tmp-genesis-data-export
