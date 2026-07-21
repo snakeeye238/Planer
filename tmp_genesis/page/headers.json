@@ -1,0 +1,22 @@
+{
+  "Date": "Tue, 21 Jul 2026 10:46:53 GMT",
+  "Server": "Generic Web Server",
+  "Cross-Origin-Opener-Policy": "same-origin-allow-popups",
+  "X-XSS-Protection": "1; mode=block",
+  "X-Frame-Options": "SAMEORIGIN",
+  "Referrer-Policy": "no-referrer",
+  "Content-Security-Policy": "default-src 'none'; object-src 'none'; font-src 'self'; script-src 'self' https://code.highcharts.com/12.5.0/lib/jspdf.js https://code.highcharts.com/12.5.0/lib/svg2pdf.js; style-src 'self' 'sha256-IO+Y1yEBEpZphZrJXe5us6Rbf6kFWpmO1AwABrsU7rA='; media-src 'self' https://genesis.destatis.de/datenbank/online/video/ blob:; img-src 'self' https://genesis.destatis.de/datenbank/online/video/ data: blob:; connect-src 'self' https://genesis.destatis.de/genesis; child-src 'none'; frame-ancestors 'none'; base-uri 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types react-dom highcharts gor default 'allow-duplicates'",
+  "Accept-Ranges": "bytes",
+  "Cross-Origin-Resource-Policy": "same-origin",
+  "Cross-Origin-Embedder-Policy": "require-corp",
+  "Last-Modified": "Thu, 25 Jun 2026 05:51:58 GMT",
+  "X-Content-Type-Options": "nosniff",
+  "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+  "Permissions-Policy": "geolocation=(), camera=(), microphone=(), payment=(), usb=(), vr=(), fullscreen=(self), autoplay=(self)",
+  "Content-Type": "text/html",
+  "Content-Length": "2326",
+  "Cache-Control": "no-store, no-cache",
+  "Pragma": "no-cache",
+  "Keep-Alive": "timeout=5, max=100",
+  "Connection": "Keep-Alive"
+}

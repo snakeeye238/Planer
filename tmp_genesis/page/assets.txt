@@ -1,0 +1,11 @@
+https://genesis.destatis.de/datenbank/online/assets/index-DwIopC4g.js
+https://genesis.destatis.de/datenbank/online/custom.css
+https://genesis.destatis.de/datenbank/online/favicon.ico
+https://genesis.destatis.de/datenbank/online/assets/index-ejNevFTX.css
+https://code.highcharts.com/12.5.0/lib/jspdf.js
+https://code.highcharts.com/12.5.0/lib/svg2pdf.js
+https://www-genesis.destatis.de/genesis/misc/
+https://www-genesis.destatis.de/genesis-old/misc/
+https://www-genesis.destatis.de
+http://genesis-test-web01-neu
+https://ergebnisse.prodzen.de;
